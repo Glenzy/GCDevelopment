@@ -1,0 +1,46 @@
+
+.foreground {
+  background: url('banner-fg.png') no-repeat scroll center bottom 0px / 100% auto;
+  @media(max-width: 767px){
+    background: url('../images/banner-fg-mb.png') no-repeat scroll center bottom 0px / 100% auto;
+  }
+}
+.overlay:before {
+    background: #75cbe7;
+    background: -webkit-gradient(linear, left top, left bottom, from(#75cbe7), to(#138fc2));
+    background: linear-gradient(to bottom, #75cbe7 0%, #138fc2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75cbe7', endColorstr='#138fc2', GradientType=0);
+    color: #ffffff;
+}
+
+.header-text{
+  margin: 0;
+  text-align: center;
+  h1 {
+    font-family: "Space-Invaders";
+    color:#fff;
+    line-height: 1.4;
+  }
+  .btn-intro {
+    display: inline-block;
+    background: rgba(227, 81, 16, 1);
+    color:#fff;
+    padding:15px;
+    width: 150px;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0 2px 11px 0 rgba(0,0,0,0.65);
+    text-decoration: none;
+    &:hover {
+      box-shadow: 0 7px 15px 0 rgba(0,0,0,0.85);
+      background: rgba(227, 81, 16, .7);
+    }
+  }
+  li {
+    font-size: 30px;
+    color:#fff;
+    padding:10px 0;
+    font-weight: 100;
+    & span {color:#e35110;font-weight: bold;}
+  }
+}

@@ -1,0 +1,139 @@
+.header {
+  border-radius: 0px;
+  background: rgba(0,0,0, .6);
+  transition: all 0.2s ease-in-out;
+  min-height:inherit;
+  height: 50px;
+  position: fixed;
+  left:0;
+  right:0;
+  top:0;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  .brand {
+    font-size: 25px;
+    color:#e35110;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in;
+    margin-right: auto;
+    padding:10px 15px;
+    & span {
+      font-weight: 200;
+    }
+  }
+  .menuWrapper {
+    overflow: auto;
+    padding: 0;
+    display: none;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    top: 0px;
+    transition: all 0.2s ease-in;
+  }
+  .menuIcon {
+    width: 27px;
+    height: 3px;
+    background-color: #fff;
+    margin: 10px 0;
+    display: block;
+    position: absolute;
+    right:15px;
+    top:5px;
+    &:nth-child(2){
+      top:12px;
+    }
+    &:nth-child(3){
+      top:19px;
+    }
+  }
+
+  .navbar-link {
+    display: inline-block;
+    color:#bdbdbd;
+    font-weight: 200;
+    padding:10px;
+    font-size: 16px;
+    transition: all 0.2s ease-in;
+    text-decoration: none;
+
+    &:last-child {
+      padding-right: 25px;
+    }
+    &:hover {
+      color:#e35110;
+    }
+    &.active {
+      color:#e35110;
+    }
+  }
+  &.scrolled {
+    background: rgba(0,0,0, .8)!important;
+    box-shadow: 0px 2px 5px 1px rgba(21,21,21,0.8);
+    height:35px;
+    .brand {
+      font-size: 20px;
+      padding: 3px 15px;
+    }
+    .menuWrapper {
+      top: -6px;
+    }
+
+  }
+    .linkWrapper {
+      display: block;
+      background: none;
+      padding:0px;
+      position: fixed;
+      top: 50px;
+      right: 0px;
+      &.open {
+        min-width: 100vw;
+        min-height: 100vh;
+      }
+      li {
+        position: absolute;
+        right: 0px;
+        height:150px;
+        width: 100px;
+        &:nth-child(2){
+          top:30px;
+        }
+        &:nth-child(3){
+          top: 60px;
+        }
+      }
+    }
+    .menuIcon {
+      transition: all 0.2s ease-in-out;
+      &.hide {
+        display: none;
+      }
+      &.open {
+        &:nth-child(1){
+          top:13px;
+          transform: rotate(45deg);
+        }
+        &:nth-child(3){
+          top:13px;
+          transform: rotate(-45deg);
+        }
+      }
+
+    }
+    .menuWrapper {display: block;}
+    .navbar-link {
+      display: block;
+      padding:10px 15px;
+      background: rgba(0,0,0, .8);
+      &:last-child {
+        padding-right: 0px;
+      }
+      &.active {
+        color:#e35110;
+      }
+    }
+}

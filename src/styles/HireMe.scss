@@ -1,0 +1,18 @@
+.section {
+  &.three {
+    .content{
+      .box-left,
+      .box-right {
+        background: #e7e7e7;
+        height: 100%;
+        float: left;
+        width: 48%;
+        height:50%;
+        margin:5px;
+        -webkit-box-shadow: 0 2px 11px 0 rgba(0,0,0,0.75);
+        -moz-box-shadow: 0 2px 11px 0 rgba(0,0,0,0.75);
+        box-shadow: 0 2px 11px 0 rgba(0,0,0,0.75);
+      }
+    }
+  }
+}

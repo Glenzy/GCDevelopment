@@ -86,7 +86,7 @@ li {
     flex-wrap: wrap
 }
 .section {
-  height: 100vh;
+  min-height: 100vh;
   color: #fff;
   position: absolute;
   top:0;
@@ -132,18 +132,6 @@ li {
     opacity: 0.01;
     transform: translateX(-150px);
   }
-  /*#parallax {
-    transition: all 500ms ease-in-out;
-    &.home {
-      transform: translate(-50%, 0);
-    }
-    &.development {
-      transform: translate(-48%, 0);
-    }
-    &.hire-me {
-      transform: translate(-46%, 0);
-    }
-  } */
 }
 
 

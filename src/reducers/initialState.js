@@ -95,6 +95,7 @@ export default {
         angle:8,
         radius:8,
         imgSrc:'../../images/React-icon.svg',
+        color:'rgba(97, 217, 251, 1)',
       },
       {
         id:1,
@@ -102,6 +103,7 @@ export default {
         angle:7,
         radius:7,
         imgSrc:'../../images/Redux-icon.svg',
+        color:'rgba(109, 70, 169, 1)',
       },
       {
         id:2,
@@ -109,6 +111,7 @@ export default {
         angle:7,
         radius:7,
         imgSrc:'../../images/javascript-logo.svg',
+        color:'rgba(247, 223, 31, 1)',
       },
       {
         id:3,
@@ -116,6 +119,7 @@ export default {
         angle:8,
         radius:8,
         imgSrc:'../../images/html5-logo.svg',
+        color:'rgba(228, 77, 38, 1)',
       },
       {
         id:4,
@@ -123,27 +127,31 @@ export default {
         angle:9,
         radius:8,
         imgSrc:'../../images/css3-logo.svg',
+        color:'rgba(54, 77, 228, 1)',
       },
       {
         id:5,
-        label:'sass',
+        label:'Sass',
         angle:9,
         radius:9,
         imgSrc:'../../images/sass-logo.svg',
+        color:'rgba(201, 101, 150, 1)',
       },
       {
         id:6,
-        label:'Jest Testing',
+        label:'Jest',
         angle:2,
         radius:2,
         imgSrc:'../../images/jest-logo.svg',
+        color:'rgba(153, 66, 91, 1)',
       },
       {
         id:7,
-        label:'RESTful APIs',
+        label:'RESTful',
         angle:6,
         radius:6,
         imgSrc:'../../images/rest-api-logo.svg',
+        color:'rgba(57, 102, 170, 1)',
       },
       {
         id:8,
@@ -151,6 +159,7 @@ export default {
         angle:5,
         radius:5,
         imgSrc:'../../images/Git-logo.svg',
+        color:'rgba(240, 81, 51, 1)',
       },
     ],
   }

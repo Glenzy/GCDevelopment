@@ -11,7 +11,8 @@ class SectionTwo extends PureComponent {
     const { DevExamples } = this.props;
     return (
     <div className="clearfix section two" id="development">
-      <div className="row v-center">
+      <div className="row">
+        <h2>Developer skillset</h2>
         <Content skills={DevExamples.skills}/>
         <Examples />
       </div>

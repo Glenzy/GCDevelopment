@@ -28,6 +28,8 @@
         }
       }
       .rv-radial-chart {
+        float:left;
+        overflow: visible;
         .rv-xy-plot__circular-grid-lines{
           circle {
             fill:none;

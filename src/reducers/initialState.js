@@ -1,4 +1,7 @@
 export default {
+  Globals: {
+    screenWidth:576,
+  },
   Game: {
     gameState: 0,
     gameBoard:{},
@@ -96,6 +99,7 @@ export default {
         radius:8,
         imgSrc:'../../images/React-icon.svg',
         color:'rgba(97, 217, 251, 1)',
+        hovered:false,
       },
       {
         id:1,
@@ -104,6 +108,7 @@ export default {
         radius:7,
         imgSrc:'../../images/Redux-icon.svg',
         color:'rgba(109, 70, 169, 1)',
+        hovered:false,
       },
       {
         id:2,
@@ -112,6 +117,7 @@ export default {
         radius:7,
         imgSrc:'../../images/javascript-logo.svg',
         color:'rgba(247, 223, 31, 1)',
+        hovered:false,
       },
       {
         id:3,
@@ -120,6 +126,7 @@ export default {
         radius:8,
         imgSrc:'../../images/html5-logo.svg',
         color:'rgba(228, 77, 38, 1)',
+        hovered:false,
       },
       {
         id:4,
@@ -128,6 +135,7 @@ export default {
         radius:8,
         imgSrc:'../../images/css3-logo.svg',
         color:'rgba(54, 77, 228, 1)',
+        hovered:false,
       },
       {
         id:5,
@@ -136,6 +144,7 @@ export default {
         radius:9,
         imgSrc:'../../images/sass-logo.svg',
         color:'rgba(201, 101, 150, 1)',
+        hovered:false,
       },
       {
         id:6,
@@ -144,6 +153,7 @@ export default {
         radius:2,
         imgSrc:'../../images/jest-logo.svg',
         color:'rgba(153, 66, 91, 1)',
+        hovered:false,
       },
       {
         id:7,
@@ -152,6 +162,7 @@ export default {
         radius:6,
         imgSrc:'../../images/rest-api-logo.svg',
         color:'rgba(57, 102, 170, 1)',
+        hovered:false,
       },
       {
         id:8,
@@ -160,6 +171,7 @@ export default {
         radius:5,
         imgSrc:'../../images/Git-logo.svg',
         color:'rgba(240, 81, 51, 1)',
+        hovered:false,
       },
     ],
   }

@@ -10,7 +10,7 @@ describe('Store', () => {
   //});
   //afterAll(() => MockDate.reset());
 
-  it('should do create 1 enemey', () => {
+  it('', () => {
     const store = configureStore();
 
     const actions = [
@@ -20,16 +20,7 @@ describe('Store', () => {
 
     const actual = store.getState();
     const expected = {
-      newMpg: 20,
-      tradeMpg: 10,
-      newPpg: 1.50,
-      tradePpg: 1.50,
-      milesDriven: 100,
-      milesDrivenTimeframe: 'month',
-      displayResults: false,
-      dateModified,
-      necessaryDataIsProvidedToCalculateSavings: true,
-      savings: calculateSavings(store.getState().fuelSavings)
+
     };
 
     expect(actual.fuelSavings).toEqual(expected);

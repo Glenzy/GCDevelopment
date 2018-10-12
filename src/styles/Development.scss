@@ -4,12 +4,13 @@
     .content {
       .skillwrapper {
         background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,1) 100%);
-        padding: 10px;
+        padding: 20px;
         box-shadow: 0 2px 11px 0 rgba(0,0,0,0.75);
-        width:400px;
-        display: inline-block;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
         margin: 20px;
-        height:600px;
         vertical-align: middle;
         @media(max-width: 767px){
           width: 90%;
@@ -28,7 +29,6 @@
         }
       }
       .rv-radial-chart {
-        float:left;
         overflow: visible;
         .rv-xy-plot__circular-grid-lines{
           circle {

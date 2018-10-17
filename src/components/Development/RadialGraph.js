@@ -1,34 +1,22 @@
 import React, { PureComponent } from 'react';
 import {CircularGridLines, RadialChart, GradientDefs} from 'react-vis';
-/*
-Hook up to Redux
-  - conect function
-  - actions
-  - state for interactivity
-  -
-*/
-class RadiaGraph extends PureComponent {
-  constructor(props){
-    super(props);
-    this.state = {
-     hoveredSection: false
-   };
-  }
+import * as actions from '../../actions/DevExampleActions';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 
-  mapData = (hoveredSection) => {
+class RadiaGraph extends PureComponent {
+
+  mapData = () => {
    const { skills } = this.props;
-   return skills.map((row, index) => {
+   return skills.map((row) => {
      return {
        ...row,
-       innerRadius: hoveredSection === index ? row.radius + 2 : null,
-       opacity: !hoveredSection || hoveredSection === index ? 1 : 0.6,
        gradientLabel:row.label,
      };
    });
  }
 
   render() {
-    const { hoveredSection } = this.state;
     const { skills } = this.props;
     return (
       <RadialChart
@@ -39,12 +27,12 @@ class RadiaGraph extends PureComponent {
         colorDomain={[0, 100]}
         colorRange={[0, 10]}
         getColor={data => `url(#${data.gradientLabel})`}
-        data={this.mapData(hoveredSection)}
-        onValueMouseOver={row => this.setState({hoveredSection: row.id})}
-        onMouseLeave={() => this.setState({hoveredSection: false})}
-        width={600}
+        data={this.mapData()}
+        onValueMouseOver={row => this.props.actions.hoveredGraph(row.id)}
+        onMouseLeave={() => this.props.actions.hoveredGraph(false)}
+        width={300}
         height={300}
-        labelsRadiusMultiplier={1.1}
+        labelsRadiusMultiplier={0.8}
       >
       <GradientDefs>
        { skills.map((skill) => {
@@ -63,5 +51,16 @@ class RadiaGraph extends PureComponent {
   }
 
 }
+function mapStateToProps(state) {
+  return {DevExamples: state.DevExamples};
+}
 
-export default RadiaGraph;
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({
+      ...actions
+    }, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RadiaGraph);

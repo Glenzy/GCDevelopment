@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 const Button = (props) => {
   return (
-    <div onClick={props.handleClickEvent} className={props.styleClasses} name={props.name}>
+    <button onClick={props.handleClickEvent} className={props.styleClasses} name={props.name}>
       {props.content}
-    </div>
+    </button>
   );
 };
 

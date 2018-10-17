@@ -5,17 +5,23 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import Content from './Content';
 import Examples from './Examples';
-class SectionTwo extends PureComponent {
+import RadialGraph from './RadialGraph';
+class Development extends PureComponent {
 
   render() {
-    const { DevExamples } = this.props;
+    const { DevExamples  } = this.props;
     return (
     <div className="section two" id="development">
       <div className="container">
         <div className="row v-center">
           <div className="text-center mx-auto">
             <h2>Developer skillset</h2>
-            <Content skills={DevExamples.skills}/>
+              <div className="content">
+                <div className="skillwrapper">
+                  <RadialGraph  skills={DevExamples.skills}/>
+                {  DevExamples.RadialGraph.hoveredSection && <Content skills={DevExamples.skills[DevExamples.RadialGraph.hoveredSection]}/> }
+                </div>
+              </div>
             <Examples />
           </div>
         </div>
@@ -38,4 +44,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SectionTwo);
+export default connect(mapStateToProps, mapDispatchToProps)(Development);

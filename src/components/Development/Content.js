@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
 import posed from 'react-pose';
-import RadialGraph from './RadialGraph';
 //import PropTypes from 'prop-types';
 const Image = posed.img({
     enter: {
@@ -21,11 +20,11 @@ class Content extends PureComponent {
     const { skills } = this.props;
 
     return (
-      <div className="content">
-        <div className="skillwrapper">
-          <RadialGraph  skills={skills}/>
-        </div>
-  </div>
+      <div>
+        <Image src={skills.logo} />
+        <h4>{skills.label}</h4>
+        <p>some content</p>
+      </div>
     );
   }
 }

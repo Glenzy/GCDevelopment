@@ -95,8 +95,8 @@ export default {
        {
         id:0,
         label:'React',
-        angle:8,
-        radius:8,
+        angle:5,
+        radius:6,
         imgSrc:'../../images/React-icon.svg',
         color:'rgba(97, 217, 251, 1)',
         hovered:false,
@@ -104,8 +104,8 @@ export default {
       {
         id:1,
         label:'Redux',
-        angle:7,
-        radius:7,
+        angle:5,
+        radius:5,
         imgSrc:'../../images/Redux-icon.svg',
         color:'rgba(109, 70, 169, 1)',
         hovered:false,
@@ -113,8 +113,8 @@ export default {
       {
         id:2,
         label:'Javascript',
-        angle:7,
-        radius:7,
+        angle:5,
+        radius:6,
         imgSrc:'../../images/javascript-logo.svg',
         color:'rgba(247, 223, 31, 1)',
         hovered:false,
@@ -122,8 +122,8 @@ export default {
       {
         id:3,
         label:'HTML5',
-        angle:8,
-        radius:8,
+        angle:5,
+        radius:6,
         imgSrc:'../../images/html5-logo.svg',
         color:'rgba(228, 77, 38, 1)',
         hovered:false,
@@ -131,8 +131,8 @@ export default {
       {
         id:4,
         label:'CSS3',
-        angle:9,
-        radius:8,
+        angle:5,
+        radius:6,
         imgSrc:'../../images/css3-logo.svg',
         color:'rgba(54, 77, 228, 1)',
         hovered:false,
@@ -140,8 +140,8 @@ export default {
       {
         id:5,
         label:'Sass',
-        angle:9,
-        radius:9,
+        angle:5,
+        radius:4,
         imgSrc:'../../images/sass-logo.svg',
         color:'rgba(201, 101, 150, 1)',
         hovered:false,
@@ -149,7 +149,7 @@ export default {
       {
         id:6,
         label:'Jest',
-        angle:2,
+        angle:5,
         radius:2,
         imgSrc:'../../images/jest-logo.svg',
         color:'rgba(153, 66, 91, 1)',
@@ -158,8 +158,8 @@ export default {
       {
         id:7,
         label:'RESTful',
-        angle:6,
-        radius:6,
+        angle:5,
+        radius:5,
         imgSrc:'../../images/rest-api-logo.svg',
         color:'rgba(57, 102, 170, 1)',
         hovered:false,
@@ -174,5 +174,8 @@ export default {
         hovered:false,
       },
     ],
+    RadiaGraph: {
+       hoveredSection: false,
+    }
   }
 };

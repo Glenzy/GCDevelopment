@@ -1,17 +1,18 @@
 import React, {PureComponent} from 'react';
-import posed from 'react-pose';
+import posed, { PoseGroup } from 'react-pose';
 //import PropTypes from 'prop-types';
-const Image = posed.img({
-    enter: {
-      opacity: 1,
-      delay: 100,
-      x:0,
-      beforeChildren: true
-    },
-    exit: {
-      opacity: 0,
-      x:50
-     }
+
+const Children = posed.div({
+  enter: {
+    opacity: 1,
+    delay: 100,
+    x:0,
+    staggerChildren: 50
+  },
+  exit: {
+    opacity: 0,
+    x:50
+   }
 });
 
 class Content extends PureComponent {
@@ -20,10 +21,14 @@ class Content extends PureComponent {
     const { skills } = this.props;
 
     return (
-      <div>
-        <Image src={skills.logo} />
-        <h4>{skills.label}</h4>
-        <p>some content</p>
+      <div className="developmentContent v-center">
+        <PoseGroup>
+          <Children key={`${skills.id}`}>
+            <img src={skills.imgSrc} key={`${skills.id}-a`} className="skill-logo"/>
+            <h4 key={`${skills.id}-b`}>{skills.label}</h4>
+            <p key={`${skills.id}-c`}>{skills.info}</p>
+          </Children>
+        </PoseGroup>
       </div>
     );
   }

@@ -10,6 +10,7 @@
         max-width: 100%;
         display: flex;
         flex-direction: row;
+        justify-content: center;
         margin: 20px;
         vertical-align: middle;
         @media(max-width: 767px){
@@ -17,15 +18,16 @@
           margin: auto;
           height:auto;
         }
-        .skill-logo {
-          display: inline-block;
-          width: 50px;
-          margin:10px;
-          vertical-align: middle;
-        }
-        h4 {
-          display: inline-block;
-          max-width: 75%;
+        .developmentContent {
+          max-width: 40%;
+
+          .skill-logo {
+            width: 130px;
+            display: inline-flex;
+            margin: 20px 40px 20px 20px;
+          }
+          h4 {display: inline-flex; font-size: 30px;}
+          p {text-align: left;}
         }
       }
       .rv-radial-chart {

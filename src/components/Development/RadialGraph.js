@@ -29,17 +29,17 @@ class RadiaGraph extends PureComponent {
         getColor={data => `url(#${data.gradientLabel})`}
         data={this.mapData()}
         onValueMouseOver={row => this.props.actions.hoveredGraph(row.id)}
-        onMouseLeave={() => this.props.actions.hoveredGraph(false)}
-        width={300}
+        width={400}
         height={300}
-        labelsRadiusMultiplier={0.8}
+        labelsRadiusMultiplier={1.3}
+        labelsAboveChildren
       >
       <GradientDefs>
        { skills.map((skill) => {
              return (
               <linearGradient key={skill.id} id={skill.label} x1="0" x2="0" y1="0" y2="1">
-               <stop offset="0%" stopColor={skill.color} stopOpacity={0.8} />
-               <stop offset="100%" stopColor="blue" stopOpacity={0.3} />
+               <stop offset="0%" stopColor={skill.color} stopOpacity={skill.stopOpacityA} />
+               <stop offset="100%" stopColor={skill.color} stopOpacity={skill.stopOpacityB} />
              </linearGradient>
            );
           })

@@ -92,14 +92,17 @@ export default {
   },
   DevExamples: {
     skills:[
-       {
+      {
         id:0,
         label:'React',
         angle:5,
-        radius:6,
+        radius:5,
         imgSrc:'../../images/React-icon.svg',
-        color:'rgba(97, 217, 251, 1)',
+        color:'rgba(118, 217, 251, 1)',
+        stopOpacityA:'0.6',
+        stopOpacityB:'0.3',
         hovered:false,
+        info:'I love the power of React and it\'s flexibility. I\'ve been actively learning and developing React apps for over 2 years. I have a long list of future fun projects (like this one) including an AI Chatbot using AWS Lambda'
       },
       {
         id:1,
@@ -108,7 +111,10 @@ export default {
         radius:5,
         imgSrc:'../../images/Redux-icon.svg',
         color:'rgba(109, 70, 169, 1)',
+        stopOpacityA:'0.6',
+        stopOpacityB:'0.3',
         hovered:false,
+        info:'I have been using Redux for as long as I have been using React - over 2 years. It\'s amazing for it\'s ability to deal with and test apps and inbuilt optimisation with connect\'s PureComponent wrapping '
       },
       {
         id:2,
@@ -117,7 +123,10 @@ export default {
         radius:6,
         imgSrc:'../../images/javascript-logo.svg',
         color:'rgba(247, 223, 31, 1)',
+        stopOpacityA:'0.6',
+        stopOpacityB:'0.3',
         hovered:false,
+        info:'I love using Javascript, I love learning it. Clearly written code with great, meaningful variable and function names get me pretty excited. '
       },
       {
         id:3,
@@ -126,7 +135,10 @@ export default {
         radius:6,
         imgSrc:'../../images/html5-logo.svg',
         color:'rgba(228, 77, 38, 1)',
+        stopOpacityA:'0.6',
+        stopOpacityB:'0.3',
         hovered:false,
+        info:'Semantic HTML is a necessity for SEO, screen readers and just as importantly other developers.',
       },
       {
         id:4,
@@ -135,7 +147,10 @@ export default {
         radius:6,
         imgSrc:'../../images/css3-logo.svg',
         color:'rgba(54, 77, 228, 1)',
+        stopOpacityA:'0.6',
+        stopOpacityB:'0.3',
         hovered:false,
+        info:'Nothing got me more excited than the release of CSS3. I\'m still learning some awesomely creative things with this language from animatins to cool hover effects to optimised end user experiences.'
       },
       {
         id:5,
@@ -144,7 +159,10 @@ export default {
         radius:4,
         imgSrc:'../../images/sass-logo.svg',
         color:'rgba(201, 101, 150, 1)',
+        stopOpacityA:'0.6',
+        stopOpacityB:'0.3',
         hovered:false,
+        info:'I\'ve been using Sass for 5 years now and I love it. I love the mixins, the nested icons that add to it\'s ability to keep code bases modular and organised.'
       },
       {
         id:6,
@@ -154,6 +172,7 @@ export default {
         imgSrc:'../../images/jest-logo.svg',
         color:'rgba(153, 66, 91, 1)',
         hovered:false,
+        info:'My biggest issue with coding anything non-trivial such as this project is regression. GAH!!!! This is an area I\'m actively learning and integrating into this project'
       },
       {
         id:7,
@@ -163,6 +182,7 @@ export default {
         imgSrc:'../../images/rest-api-logo.svg',
         color:'rgba(57, 102, 170, 1)',
         hovered:false,
+        info:'Where would we be without APIs? As Front-end developers we use these every day.'
       },
       {
         id:8,
@@ -171,10 +191,13 @@ export default {
         radius:5,
         imgSrc:'../../images/Git-logo.svg',
         color:'rgba(240, 81, 51, 1)',
+        stopOpacityA:'0.6',
+        stopOpacityB:'0.3',
         hovered:false,
+        info:'Another tool we use every day. When working with other developers, keep your branches short and commit often.'
       },
     ],
-    RadiaGraph: {
+    RadialGraph: {
        hoveredSection: false,
     }
   }

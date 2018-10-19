@@ -197,8 +197,5 @@ export default {
         info:'Another tool we use every day. When working with other developers, keep your branches short and commit often.'
       },
     ],
-    RadialGraph: {
-       hoveredSection: false,
-    }
   }
 };

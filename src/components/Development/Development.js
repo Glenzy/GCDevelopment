@@ -7,10 +7,16 @@ import Content from './Content';
 import Examples from './Examples';
 import RadialGraph from './RadialGraph';
 class Development extends PureComponent {
-
+/*
+  TO DO:
+    Add click to change functionality
+    Add swipeable for mobile navigation
+    Add an "Examples" button to bring up game when clicked
+      - Fix game ADD TESTS!!!!
+*/
   render() {
-    const {DevExamples} = this.props;
-    const skills = DevExamples.skills;
+    const skills = this.props.DevExamples.skills;
+    const skill = skills.filter((skill) => skill.hovered === true);
     return (<div className="section two" id="development">
       <div className="container">
         <div className="row v-center">
@@ -19,11 +25,7 @@ class Development extends PureComponent {
             <div className="content">
               <div className="skillwrapper">
                 <RadialGraph skills={skills}/>
-                {
-                  DevExamples.RadialGraph.hoveredSection != false
-                    ? <Content skills={skills[DevExamples.RadialGraph.hoveredSection]}/>
-                    : <Content skills={DevExamples.skills[0]}/>
-                }
+              { skill.length ? <Content skills={skill[0]} /> : <Content skills={skills[0]} />}
               </div>
             </div>
             <Examples/>

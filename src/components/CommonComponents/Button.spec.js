@@ -23,7 +23,11 @@ describe('the button component', ()=>{
     expect(handleClickEvent.calls.length).toBe(1);
   });
   it('renders correctly', () => {
-    const wrapper = shallow(<Button />);
+    // given
+    givenButtonWithProps(defaultProps)
+    //when
+    .shallow(<Button />);
+    //then
     expect(wrapper).toMatchSnapshot();
     // On the first run of this test, Jest will generate a snapshot file automatically.
   });

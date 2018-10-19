@@ -7,20 +7,25 @@ export default function DevExamplesReducer(state = initialState.DevExamples, act
     case types.GRAPH_HOVERED:
       return {
           ...state,
-        RadialGraph: {
-          ...state.RadiaGraph,
-          hoveredSection:action.sectionId
-        },
-      /*  skills: state.skills.map((skill) =>{
+        skills: state.skills.map((skill) =>{
           if(skill.id === action.sectionId){
             return {
               ...skill,
+              hovered:true,
               angle:10,
               stopOpacityA:1,
               stopOpacityB:0.8
             };
+          } else {
+            return {
+              ...skill,
+              hovered:false,
+              angle:5,
+              stopOpacityA:0.6,
+              stopOpacityB:0.3
+            };
           }
-        })*/
+        })
       };
     default:
       return state;

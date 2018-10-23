@@ -28,8 +28,9 @@ class RadiaGraph extends PureComponent {
         colorRange={[0, 10]}
         getColor={data => `url(#${data.gradientLabel})`}
         data={this.mapData()}
-        onValueMouseOver={row => this.props.actions.hoveredGraph(row.id)}
-        width={400}
+        onValueMouseOver={row => this.props.actions.interactedWithGraph(row.id)}
+        onClick={row => this.props.actions.interactedWithGraph(row.id)}
+        width={300}
         height={300}
         labelsRadiusMultiplier={1.3}
         labelsAboveChildren

@@ -1,6 +1,5 @@
 import * as types from '../constants/ActionTypes';
 
-export function hoveredGraph(sectionId) {
-  console.log('Calling action');
-  return {type: types.GRAPH_HOVERED, sectionId};
+export function interactedWithGraph(sectionId) {
+  return {type: types.INTERACTED_WITH_GRAPH, sectionId};
 }

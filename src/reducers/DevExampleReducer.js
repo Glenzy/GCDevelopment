@@ -2,16 +2,15 @@ import * as types from '../constants/ActionTypes';
 import initialState from './initialState';
 
 export default function DevExamplesReducer(state = initialState.DevExamples, action) {
-  console.log('calling reducer',state.skills[action.sectionId]);
   switch (action.type) {
-    case types.GRAPH_HOVERED:
+    case types.INTERACTED_WITH_GRAPH:
       return {
           ...state,
         skills: state.skills.map((skill) =>{
           if(skill.id === action.sectionId){
             return {
               ...skill,
-              hovered:true,
+              active:true,
               angle:10,
               stopOpacityA:1,
               stopOpacityB:0.8
@@ -19,7 +18,7 @@ export default function DevExamplesReducer(state = initialState.DevExamples, act
           } else {
             return {
               ...skill,
-              hovered:false,
+              active:false,
               angle:5,
               stopOpacityA:0.6,
               stopOpacityB:0.3

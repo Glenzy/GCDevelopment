@@ -23,4 +23,4 @@ export const ACTIVATE_MENU = 'ACTIVATE_MENU';
 
 /*======== Dev Examples ======= */
 
-export const GRAPH_HOVERED = 'GRAPH_HOVERED';
+export const INTERACTED_WITH_GRAPH = 'INTERACTED_WITH_GRAPH';

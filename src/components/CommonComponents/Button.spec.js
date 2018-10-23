@@ -15,20 +15,18 @@ describe('the button component', ()=>{
   it('should call click handler when clicked', ()=>{
     // given
     givenButtonWithProps(defaultProps);
-    console.log('givenButtonWithProps', givenButtonWithProps);
-    // when
-    const buttonElement = wrapper.find('.dummyClassA');
-    buttonElement.simulate('click');
+      // when
+    wrapper.simulate('click');
     // then
-    expect(handleClickEvent.calls.length).toBe(1);
+    expect(handleClickEvent.mock.calls.length).toBe(1);
   });
   it('renders correctly', () => {
     // given
-    givenButtonWithProps(defaultProps)
+    givenButtonWithProps(defaultProps);
     //when
-    .shallow(<Button />);
+    //.shallow(<Button />);
     //then
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.text()).toEqual("Test");
     // On the first run of this test, Jest will generate a snapshot file automatically.
   });
 });

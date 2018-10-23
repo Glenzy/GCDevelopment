@@ -19,7 +19,7 @@ class Content extends PureComponent {
   render() {
     const { skills } = this.props;
     return (
-      <div className="developmentContent v-center">
+      <div className="developmentContent">
         <PoseGroup>
           <Children key={`${skills.id}-a`}>
             <img src={skills.imgSrc}className="skill-logo"/>

@@ -3,15 +3,50 @@ import React, {Component} from 'react';
 import * as actions from '../../actions/DevExampleActions';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Content from './Content';
+import posed, { PoseGroup, tween } from 'react-pose';
 import Examples from './Examples';
-import RadialGraph from './RadialGraph';
+import InteractiveGraph from './InteractiveGraph';
+const SkillWapper = posed.div({
+  500:{
+    height:500,
+    transition:tween,
+    delay:400,
+    flip: true
+  },
+  800:{
+    height:800,
+    transition:tween,
+    delay:200,
+    flip: true
+  }
+});
+const FadeInExamples = posed.div({
+  show: {
+    opacity:1,
+    x:0,
+    delay:400,
+  },
+  hide:{
+    opacity:0,
+    x:-100,
+  }
+});
+const FadeInContent = posed.div({
+  show: {
+    opacity:1,
+    x:0,
+    delay:500,
+  },
+  hide:{
+    opacity:0,
+    x:-100,
+  }
+});
 class Development extends Component {
 /*
   TO DO:
     Add swipeable for mobile navigation
-    Add an "Examples" button to bring up game when clicked
+    Break out each Component into it's own so Examples and COntent are mounted and un mounted as rendered
       - Fix game ADD TESTS!!!!
 */
 getActive = (skills) => {
@@ -37,30 +72,38 @@ getActive = (skills) => {
        return this.props.actions.interactedWithGraph(id-1);
    }
  }
+
+showExamplesAction = () =>{
+  return this.props.actions.showExamples();
+}
+
   render() {
-    const skills = this.props.DevExamples.skills;
+    const{ skills, showExamples} = this.props.DevExamples;
     const skill = this.getActive(skills);
     return (
     <div className="section two" id="development">
       <div className="container">
-        <div className="row  skillwrapper align-items-center justify-content-center h-100">
+        <div className="row  align-items-center justify-content-center h-100">
           <div className="col-12"><h2>Developer skillset</h2></div>
-          <div className="col-sm-1">
-            <FontAwesomeIcon icon="chevron-left" onClick={this.prevSkill} />
-          </div>
-          <div className="col-sm-4">
-            <RadialGraph skills={skills}/>
-          </div>
-          <div className="col-sm-6">
-            { skill.length ? <Content skills={skill[0]} /> : <Content skills={skills[0]} />}
-          </div>
-          <div className="col-sm-1">
-            <FontAwesomeIcon icon="chevron-right" onClick={this.nextSkill}/>
-          </div>
         </div>
-        <div className="row align-items-center">
-          <div className="col-12"><Examples/></div>
-        </div>
+        <SkillWapper className="skillwrapper" pose={showExamples ? '800' :'500'}>
+          <PoseGroup>
+             <FadeInContent pose={showExamples ? 'hide' :'show'} key="interactiveGraph" className={showExamples ? 'pin-top' : 'shown pin-top'}>
+              <InteractiveGraph
+                skill={skill}
+                skills={skills}
+                showExamplesAction={this.showExamplesAction}
+                showExamples={showExamples}
+                prevSkill={this.prevSkill}
+                nextSkill={this.nextSkill}
+                className={showExamples ? 'shown' : ''}
+                key="interactiveGraph" />
+            </FadeInContent>
+            <FadeInExamples  pose={showExamples ? 'show' :'hide'} key="examples" className={showExamples ? 'shown pin-top' : 'pin-top'}>
+               <Examples showExamplesAction={this.showExamplesAction} showExamples={showExamples}  key="examples" />
+            </FadeInExamples>
+          </PoseGroup>
+        </SkillWapper>
       </div>
     </div>);
   }

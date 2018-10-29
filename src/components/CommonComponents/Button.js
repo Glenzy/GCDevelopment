@@ -15,5 +15,7 @@ Button.propTypes = {
   styleClasses: PropTypes.string.isRequired,
   name: PropTypes.string
 };
-
+Button.defaultProps = {
+  name:"",
+};
 export default Button;

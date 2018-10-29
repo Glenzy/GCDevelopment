@@ -26,6 +26,11 @@ export default function DevExamplesReducer(state = initialState.DevExamples, act
           }
         })
       };
+  case types.SHOW_EXAMPLES:
+    return {
+      ...state,
+      showExamples:!state.showExamples
+    };
     default:
       return state;
     }

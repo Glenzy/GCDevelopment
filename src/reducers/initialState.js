@@ -91,12 +91,13 @@ export default {
     ]
   },
   DevExamples: {
+    showExamples:false,
     skills:[
       {
         id:0,
         label:'React',
         angle:10,
-        radius:5,
+        radius:7,
         imgSrc:'../../images/React-icon.svg',
         color:'rgba(118, 217, 251, 1)',
         stopOpacityA:1,
@@ -132,7 +133,7 @@ export default {
         id:3,
         label:'HTML5',
         angle:5,
-        radius:6,
+        radius:7,
         imgSrc:'../../images/html5-logo.svg',
         color:'rgba(228, 77, 38, 1)',
         stopOpacityA:'0.6',
@@ -144,7 +145,7 @@ export default {
         id:4,
         label:'CSS3',
         angle:5,
-        radius:6,
+        radius:7,
         imgSrc:'../../images/css3-logo.svg',
         color:'rgba(54, 77, 228, 1)',
         stopOpacityA:'0.6',
@@ -156,7 +157,7 @@ export default {
         id:5,
         label:'Sass',
         angle:5,
-        radius:4,
+        radius:6,
         imgSrc:'../../images/sass-logo.svg',
         color:'rgba(201, 101, 150, 1)',
         stopOpacityA:'0.6',

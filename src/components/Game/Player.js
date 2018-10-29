@@ -33,6 +33,7 @@ class Player extends React.Component {
   }
   update() {
     const gameBoard = this.props.gameBoard;
+    console.log('this.props.x',this.props.x);
     if (this.props.velocity.x === -1 && this.props.x > 0) {
       this.x = this.props.x - 1;
     } else if (this.props.velocity.x === 1 && this.props.x < gameBoard.width - 60) {

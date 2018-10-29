@@ -6,6 +6,9 @@
 @import 'HireMe.scss';
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 /* Styles */
+$theme-colors: (
+  "GCDevelopmentOrange": #e35110
+);
 body {
   font: 17px 'Roboto', sans-serif;
   line-height: 1.4em;
@@ -139,9 +142,23 @@ li {
   from {opacity: 1}
   to {opacity: 0}
 }
-.btn {
-    transition: all 0.3s ease-in;
-}
+
+ .btn-intro {
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    background: rgba(227, 81, 16, 1);
+    color:#fff;
+    padding:15px;
+
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0 2px 11px 0 rgba(0,0,0,0.65);
+    text-decoration: none;
+    &:hover {
+      box-shadow: 0 7px 15px 0 rgba(0,0,0,0.85);
+      background: rgba(227, 81, 16, .7);
+    }
+  }
 
 .fade-enter {
   .section {

@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import  GameReducer  from './GameReducer';
 import MenuReducer from './MenuReducer';
-import DevExamplesReducer from './DevExamplesReducer';
+import DevExampleReducer from './DevExampleReducer';
 
 const rootReducer = combineReducers({
   Game:GameReducer,
   Menu:MenuReducer,
-  DevExamples:DevExamplesReducer,
+  DevExamples:DevExampleReducer,
 });
 
 export default rootReducer;

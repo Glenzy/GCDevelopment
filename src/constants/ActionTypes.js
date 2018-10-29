@@ -20,3 +20,8 @@ export const TOP_SCORES = 'TOP_SCORES';
 /* ======== MENU ========== */
 export const LINK_CLICKED = 'LINK_CLICKED';
 export const ACTIVATE_MENU = 'ACTIVATE_MENU';
+
+/*======== Dev Examples ======= */
+
+export const INTERACTED_WITH_GRAPH = 'INTERACTED_WITH_GRAPH';
+export const SHOW_EXAMPLES = 'SHOW_EXAMPLES';

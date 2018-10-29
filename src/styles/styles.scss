@@ -1,20 +1,23 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
 @import 'menu.scss';
 @import 'HomePage.scss';
 @import 'Development.scss';
 @import 'Game.scss';
 @import 'HireMe.scss';
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 /* Styles */
+$theme-colors: (
+  "GCDevelopmentOrange": #e35110
+);
 body {
-  font: 17px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: 17px 'Roboto', sans-serif;
   line-height: 1.4em;
   color: #4d4d4d;
   margin: 0 auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
   font-smoothing: antialiased;
   font-weight: 300;
   overflow: auto;
+  background: #000;
 }
 @font-face {
   font-family: 'Space-Invaders';
@@ -49,6 +52,18 @@ div, img, ul, section {
 li {
   list-style: none;
 }
+.v-center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
 .fixed-top {
     position: fixed;
     top: 0;
@@ -73,20 +88,10 @@ li {
     height: 100%;
 }
 .fixed {position: fixed;}
-.v-center {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-line-pack: center;
-    align-content: center;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap
-}
+
 .section {
   height: 100vh;
+  width: 100vw;
   color: #fff;
   position: absolute;
   top:0;
@@ -94,7 +99,21 @@ li {
   right:0;
   padding: 100px 0 100px;
   z-index: 3;
-  overflow: hidden;
+  .content {
+    padding:0 20px;
+    // Small devices (landscape phones, 576px and up)
+    @media (min-width: 576px) {
+      width:100%;
+      max-width:100%;
+     }
+
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        max-width: 1440px;
+
+     }
+  }
   h2 {
       text-align: center;
       font-size: 55px;
@@ -123,27 +142,29 @@ li {
   from {opacity: 1}
   to {opacity: 0}
 }
-.btn {
-    transition: all 0.3s ease-in;
-}
+
+ .btn-intro {
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    background: rgba(227, 81, 16, 1);
+    color:#fff;
+    padding:15px;
+
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0 2px 11px 0 rgba(0,0,0,0.65);
+    text-decoration: none;
+    &:hover {
+      box-shadow: 0 7px 15px 0 rgba(0,0,0,0.85);
+      background: rgba(227, 81, 16, .7);
+    }
+  }
 
 .fade-enter {
   .section {
     opacity: 0.01;
     transform: translateX(-150px);
   }
-  /*#parallax {
-    transition: all 500ms ease-in-out;
-    &.home {
-      transform: translate(-50%, 0);
-    }
-    &.development {
-      transform: translate(-48%, 0);
-    }
-    &.hire-me {
-      transform: translate(-46%, 0);
-    }
-  } */
 }
 
 

@@ -1,8 +1,11 @@
 import React from 'react';
 import {ConnectedRouter} from 'connected-react-router';
 import PropTypes from 'prop-types';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faChevronRight, faChevronLeft, faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import Menu from './CommonComponents/Menu';
 import Container from './Routes';
+library.add(faChevronRight, faChevronLeft, faWindowClose);
 class App extends React.Component {
   render() {
     const {history} = this.props;

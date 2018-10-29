@@ -22,19 +22,7 @@
     line-height: 1.4;
   }
   .btn-intro {
-    display: inline-block;
-    background: rgba(227, 81, 16, 1);
-    color:#fff;
-    padding:15px;
     width: 150px;
-    text-align: center;
-    margin: 10px;
-    box-shadow: 0 2px 11px 0 rgba(0,0,0,0.65);
-    text-decoration: none;
-    &:hover {
-      box-shadow: 0 7px 15px 0 rgba(0,0,0,0.85);
-      background: rgba(227, 81, 16, .7);
-    }
   }
   li {
     font-size: 30px;

@@ -1,49 +1,65 @@
 import React, {PureComponent} from 'react';
 import posed, { PoseGroup } from 'react-pose';
 //import PropTypes from 'prop-types';
-const Image = posed.img({
-    enter: {
-      opacity: 1,
-      delay: 100,
-      x:0,
-      beforeChildren: true
-    },
-    exit: {
-      opacity: 0,
-      x:50
-     }
+const Children = posed.div({
+  enter: {
+    opacity: 1,
+    delay: 200,
+    staggerChildren: 250
+
+  },
+  exit: {
+    opacity: 0,
+   }
+});
+const SkillLogo = posed.img({
+  enter:{
+    opacity:1,
+    delay:300,
+    x:0,
+  },
+  exit: {
+    opacity:0,
+    x:-50,
+  }
+});
+const SkillTitle = posed.h4({
+  enter:{
+    opacity:1,
+    delay:300,
+    x:0,
+  },
+  exit: {
+    opacity:0,
+    x:50,
+  }
+});
+const SkillContent = posed.p({
+  enter:{
+    opacity:1,
+    delay:400,
+    x:0,
+    y:0,
+  },
+  exit: {
+    opacity:0,
+    x:0,
+    y:50,
+  }
 });
 class Content extends PureComponent {
   render() {
     const { skills } = this.props;
     return (
-      <div className="content">
-        <h2>Skills that pay bills</h2>
-        <div className="skillwrapper left">
-        {skills.map((skill, index) => {
-          if(index < 4){
-            return (
-            <div key={skill.id}>
-              <Image src={skill.imgSrc} className="skill-logo"/>
-              <h4 className="skill-name">{skill.level}</h4>
-              <div>'...'</div>
-            </div>);
-          }
-        })}
+      <div className="developmentContent">
+        <PoseGroup>
+          <Children key={`${skills.id}`}>
+            <SkillLogo src={skills.imgSrc}className="skill-logo" key={`${skills.id}-a`} />
+            <SkillTitle key={`${skills.id}-b`}>{skills.label}</SkillTitle>
+            <SkillContent key={`${skills.id}-c`}>{skills.info}</SkillContent>
+          </Children>
+        </PoseGroup>
       </div>
-      <div className="skillwrapper right">
-      {skills.map((skill, index) => {
-        if(index >= 4){
-          return (
-          <div key={skill.id}>
-              <Image src={skill.imgSrc} className="skill-logo" />
-            <h4 className="skill-name">{skill.level}</h4>
-            <div>'...'</div>
-          </div>);
-        }
-      })}
-    </div>
-  </div>
     );
   }
 }

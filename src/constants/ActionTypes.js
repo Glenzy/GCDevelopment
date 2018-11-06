@@ -15,7 +15,8 @@ export const BULLET_HAS_STOPPED = 'BULLET_HAS_STOPPED';
 export const ENEMY_HIT_PLAYER = 'ENEMY_HIT_PLAYER';
 export const SHOW_GAME_OVER = 'SHOW_GAME_OVER';
 export const TOP_SCORES = 'TOP_SCORES';
-
+export const CHANGE_GAME_STATE = 'CHANGE_GAME_STATE';
+export const SET_GAME_BOARD = 'SET_GAME_BOARD';
 
 /* ======== MENU ========== */
 export const LINK_CLICKED = 'LINK_CLICKED';

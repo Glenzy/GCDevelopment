@@ -2,9 +2,16 @@
   background: #e7e7e7 url('../images/game-bg.jpg') no-repeat scroll center center / cover; overflow: hidden;
 }
 .section {
+  .gameContainerWrapper {
+    width: 375px;
+    height:667px;
+    div {
+      width: 100%;
+      height: 100%;
+    }
   .game-wrapper  {
     overflow: hidden;
-    height: 250px;
+    height: 100%;
     width:100%;
     font-family: 'Space-Invaders';
     opacity: 1;
@@ -19,17 +26,20 @@
     .Enemy {
       width:50px;
       height:50px;
+      max-width:50px;
+      max-height:50px;
       position: absolute;
       .enemyBox{fill:#344bd1;}.\37 d1cb29a-1447-4902-a2d5-4c84805d307f,.\39 1294199-2b74-48ec-82a6-2b4c651e75d8,.af26072c-5bc7-4c0e-8b54-9671fc8448e1,.dc3f6668-9a52-4c9c-aee6-b3f25c446e8b{stroke:#000;stroke-miterlimit:10;}.\37 c13dfcb-3e57-4320-96f6-90d519a9df5d{fill:#fcfbfa;}.\39 1294199-2b74-48ec-82a6-2b4c651e75d8{fill:none;}.dc3f6668-9a52-4c9c-aee6-b3f25c446e8b{fill:#8ec9ed;}.af26072c-5bc7-4c0e-8b54-9671fc8448e1{fill:#020202;}.ee79cc9f-2402-4eec-80b5-b9f6ae7de849{fill:#fcfcfc;}
     }
     .Player {
       width:50px;
       height:50px;
+      position: absolute;
       .\37 8090e7c-762f-4943-af1a-48c917c788b1{fill:#f7c341;}.\35 c12e2b7-dd17-4fab-875d-10081085816e{fill:#020202;stroke:#000;stroke-miterlimit:10;stroke-width:10px;}.\30 dd9f44c-7e2a-4ea6-831b-a3e45c816997{fill:#fcfcfc;}
     }
     .hud {
       position: fixed;
-      z-index: 2;
+      z-index: 3;
       top:0;
       left:0;
       right:0;
@@ -44,10 +54,16 @@
         border: 1px #fff solid;
         padding: 3px 3px 1px;
         transition: all 0.3s ease-in-out;
+        position: relative;
+        z-index: 1;
         &:hover, &:active {
           color:#e35110;
           border: 1px #e35110 solid;
         }
+      }
+      .scoreWrapper {
+        position: relative;
+        z-index: 0;
       }
       .score {
         color: #e35110;
@@ -275,4 +291,5 @@
 			opacity:0;
       -webkit-transform: scale(2);
 		}
+  }
 }

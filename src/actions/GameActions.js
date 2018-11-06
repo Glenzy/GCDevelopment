@@ -21,8 +21,8 @@ export function movePlayer(x, y) {
 export function moveEnemy(id, x, y) {
   return {type: types.MOVE_ENEMY, id, x, y};
 }
-export function changeEnemyDirection(id, x, y) {
-  return {type: types.CHANGE_ENEMY_DIRECTION,  id, x, y};
+export function changeEnemyDirection(id, x, y, lastXchange, lastYchange) {
+  return {type: types.CHANGE_ENEMY_DIRECTION,  id, x, y, lastXchange, lastYchange};
 }
 export function changeVelocity(x, y) {
   return {type: types.CHANGE_PLAYER_DIRECTION, x, y};
@@ -42,7 +42,15 @@ export function scored(){
 export function enemyHitPlayer(){
   return {type:types.ENEMY_HIT_PLAYER};
 }
-
+export function changeGameState(){
+return {type:types.CHANGE_GAME_STATE};
+}
+export function setGameBoard(gameBoard){
+  return {
+    type:types.SET_GAME_BOARD,
+    gameBoard
+  };
+}
 /*
 * 1: Write score to database
 * 2: Get top scores from database

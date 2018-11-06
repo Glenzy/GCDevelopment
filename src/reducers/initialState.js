@@ -4,6 +4,7 @@ export default {
   },
   Game: {
     gameState: 0,
+    hasGameStarted:false,
     gameBoard:{},
     enemies:[
         {
@@ -29,7 +30,7 @@ export default {
       y:110,
       width:50,
       height:50,
-      velocity:{x:1, y:1}
+      velocity:{x:3, y:3, lastXchange:new Date(), lastYchange:new Date()}
     },
     enemyCount:0,
     maxEnemies:2,
@@ -83,9 +84,9 @@ export default {
       {
         id:2,
         title:'Contact me',
-        navigationLink: '/hire-me',
+        navigationLink: '/contact',
         active:false,
-        name:'Hire me',
+        name:'Contact',
         classNames:'navbar-link',
       },
     ]

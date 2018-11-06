@@ -52,18 +52,18 @@ getImage = () => {
     const currentKey = location.pathname.split('/')[1] || '/';
     return (
       <div>
-          <Image
-              id="parallax"
-               src={this.getImage()}
-               alt="GCDevelopment React and Javascript Developer"
-               className={currentKey}
-                />
+        <Image
+          id="parallax"
+           src={this.getImage()}
+           alt="GCDevelopment React and Javascript Developer"
+           className={currentKey}
+        />
       <PoseGroup>
         <RoutesContainer key={currentKey}>
             <Switch location={this.props.location}>
-              <Route exact path="/" component={HomePageAnimated} />
-              <Route path="/development" component={Development} />
-              <Route path="/hire-me" component={HireMe} />
+              <Route exact path="/" component={HomePageAnimated} key="home" />
+              <Route path="/development" component={Development} key="development" />
+              <Route path="/contact" component={HireMe}key="contact" />
             </Switch>
         </RoutesContainer>
       </PoseGroup>

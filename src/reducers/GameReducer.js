@@ -122,6 +122,16 @@ export default function GameReducer(state = initialState.Game, action, resetStat
             scores:action.topScores,
           }
         };
+    case types.CHANGE_GAME_STATE:
+      return {
+        ...state,
+        hasGameStarted:!state.hasGameStarted,
+      };
+    case types.SET_GAME_BOARD:
+    return {
+      ...state,
+      gameBoard:action.gameBoard,
+    };
     case types.CREATE_ENEMY:
       return state;
     default:

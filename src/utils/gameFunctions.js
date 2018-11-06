@@ -38,7 +38,10 @@ export function getElementSize(htmlElement){
    return  {height: htmlElement.offsetHeight, width:htmlElement.offsetWidth};
 }
 
-
+export function checkTimeDifference(prevTime){
+  let currentTime = new Date();
+  return (currentTime.getTime() - prevTime.getTime());
+}
 
 /**
  * Returns a random integer between min (inclusive) and max (inclusive)

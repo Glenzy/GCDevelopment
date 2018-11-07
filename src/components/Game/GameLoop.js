@@ -104,15 +104,14 @@ class GameLoop extends Component {
   update(){
      const { player, enemy, bullet, gameBoard }  = {...this.props};
     //Player Movement
-    console.log('player.x', player.velocity.x);
     if (player.velocity.x === -1 && player.x > -gameBoard.width/2) {
       //goes left
       this.playerCurrentXPosition = player.x - 2;
     } else if (player.velocity.x === 1 && player.x < (gameBoard.width/2-60)) {
       //goes right
-      console.log('should go right');
       this.playerCurrentXPosition = player.x + 2;
     } else {
+      //if swiped up or down player stops
       this.playerCurrentXPosition = player.x;
     }
     if (gameFunctions.checkRectCollision(enemy, player)) {

@@ -108,7 +108,7 @@ class GameLoop extends Component {
     if (player.velocity.x === -1 && player.x > -gameBoard.width/2) {
       //goes left
       this.playerCurrentXPosition = player.x - 2;
-    } else if (player.velocity.x === 1 && player.x < gameBoard.width/2-60) {
+    } else if (player.velocity.x === 1 && player.x < (gameBoard.width/2-60)) {
       //goes right
       console.log('should go right');
       this.playerCurrentXPosition = player.x + 2;

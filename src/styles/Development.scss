@@ -7,7 +7,6 @@
         box-shadow: 0 2px 11px 0 rgba(0,0,0,0.75);
         padding: 70px 0;
         position: relative;
-        //min-height:500px;
         .pin-top {
           position: absolute;
           top: 70px;
@@ -28,6 +27,12 @@
         }
         .fa-chevron-right, .fa-chevron-left {
           font-size: 2em;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+            color: rgba(255,255,255,0.65);
+            &:hover {
+              color: rgba(255,255,255,1);
+            }
         }
         .developmentContent {
           display: inline-block;
@@ -43,6 +48,7 @@
       .rv-radial-chart {
         overflow: visible;
         display: inline-block;
+        cursor: pointer;
         svg{
           overflow: visible;
         }
@@ -58,9 +64,5 @@
           font-family: sans-serif;
         }
       }
-    .gameContainerWrapper {
-      width: 375px;
-      height:667px;
-    }
   }
 }

@@ -53,6 +53,7 @@ export default function GameReducer(state = initialState.Game, action, resetStat
         player: {
           ...state.player,
           score:0,
+          isAlive:true,
         }
       };
 
@@ -63,6 +64,7 @@ export default function GameReducer(state = initialState.Game, action, resetStat
         player: {
           ...resetState.player,
           score:state.player.score,
+          isAlive:false,
         }
       };
 
@@ -71,7 +73,9 @@ export default function GameReducer(state = initialState.Game, action, resetStat
         ...state,
         bullet: {
           ...state.bullet,
-          isAlive: !state.bullet.isAlive
+          isAlive: true,
+          x: action.x,
+          y: action.y
         }
       };
     case types.ENEMY_HIT_PLAYER:
@@ -93,7 +97,6 @@ export default function GameReducer(state = initialState.Game, action, resetStat
         ...state,
         bullet: {
           ...state.bullet,
-          x: action.x,
           y: action.y
         }
       };
@@ -122,6 +125,16 @@ export default function GameReducer(state = initialState.Game, action, resetStat
             scores:action.topScores,
           }
         };
+    case types.CHANGE_GAME_STATE:
+      return {
+        ...state,
+        hasGameStarted:!state.hasGameStarted,
+      };
+    case types.SET_GAME_BOARD:
+    return {
+      ...state,
+      gameBoard:action.gameBoard,
+    };
     case types.CREATE_ENEMY:
       return state;
     default:

@@ -25,14 +25,13 @@ export function changeEnemyDirection(id, x, y, lastXchange, lastYchange) {
   return {type: types.CHANGE_ENEMY_DIRECTION,  id, x, y, lastXchange, lastYchange};
 }
 export function changeVelocity(x, y) {
-  console.log('changeVelocity', x);
   return {type: types.CHANGE_PLAYER_DIRECTION, x, y};
 }
-export function fireBullet(){
-  return {type:types.BULLET_INITIATE};
+export function fireBullet(x, y){
+  return {type:types.BULLET_INITIATE, x, y};
 }
-export function bulletIsMoving(x,y){
-  return {type:types.BULLET_IS_MOVING,x, y};
+export function bulletIsMoving(y){
+  return {type:types.BULLET_IS_MOVING, y};
 }
 export function bulletHasFinished(){
   return {type:types.BULLET_HAS_STOPPED};

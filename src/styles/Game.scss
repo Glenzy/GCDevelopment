@@ -34,6 +34,8 @@
     .Player {
       width:50px;
       height:50px;
+      max-width:50px;
+      max-height:50px;
       position: absolute;
       .\37 8090e7c-762f-4943-af1a-48c917c788b1{fill:#f7c341;}.\35 c12e2b7-dd17-4fab-875d-10081085816e{fill:#020202;stroke:#000;stroke-miterlimit:10;stroke-width:10px;}.\30 dd9f44c-7e2a-4ea6-831b-a3e45c816997{fill:#fcfcfc;}
     }
@@ -75,11 +77,15 @@
 
       }
     }
+    .floatingBulletImage{
+      width: 10px;
+      height:10px;
+      position:absolute;
+    }
     #floatingBulletImage {
       fill:url(#floatingBulletImageGradient);
       width: 10px;
       height:10px;
-      position:absolute;
     }
     .explosion {
       margin:0;

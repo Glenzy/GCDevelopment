@@ -36,7 +36,7 @@ export default {
     maxEnemies:2,
     lastEnemyCreated:new Date(),
     player: {
-      isAlive:true,
+      isAlive:false,
       score:0,
       x:0,
       y:0,

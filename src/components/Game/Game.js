@@ -20,7 +20,7 @@ class Game extends Component {
   }
 
   setGame(gameBoard) {
-      this.props.actions.movePlayer(-gameBoard.width/2, gameBoard.height-60);
+      this.props.actions.movePlayer(0, gameBoard.height-60);
       this.props.actions.setGameBoard(gameBoard);
      return this.props.actions.changeGameState();
   }

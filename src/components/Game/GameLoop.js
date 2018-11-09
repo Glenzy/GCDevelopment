@@ -5,6 +5,8 @@ import Swipeable from 'react-swipeable';
 import * as gameFunctions from '../../utils/gameFunctions';
 import Enemy from './Enemy';
 import Player from './Player';
+import BulletImage from './BulletImage';
+import Explosion from './Explosion';
 import Hud from './Hud';
 class GameLoop extends Component {
   static contextTypes = {
@@ -47,8 +49,8 @@ class GameLoop extends Component {
 
   fireBullet = () => {
     if(!this.props.bullet.isAlive){
-      this.props.actions.bulletIsMoving(this.props.player.x, this.props.gameBoard.height-50);
-      return this.props.actions.fireBullet();
+      console.log('fired');
+      return this.props.actions.fireBullet(this.props.player.x, this.props.gameBoard.height-50);
     }
   }
   enemyChangeDirection = (wallHit) => {
@@ -97,39 +99,29 @@ class GameLoop extends Component {
   }
   explosionStateChange = (finished) => {
     if(finished === 0){
-        return this.props.endGame(2);
+        return this.props.actions.endGame(2);
     }
 
   }
   update(){
      const { player, enemy, bullet, gameBoard }  = {...this.props};
     //Player Movement
-    if (player.velocity.x === -1 && player.x > -gameBoard.width/2) {
+    if (player.velocity.x === -1 && player.x > 0) {
       //goes left
       this.playerCurrentXPosition = player.x - 2;
-    } else if (player.velocity.x === 1 && player.x < (gameBoard.width/2-60)) {
+    } else if (player.velocity.x === 1 && player.x < gameBoard.width-60) {
       //goes right
       this.playerCurrentXPosition = player.x + 2;
     } else {
       //if swiped up or down player stops
       this.playerCurrentXPosition = player.x;
     }
-    if (gameFunctions.checkRectCollision(enemy, player)) {
-      this.props.actions.enemyHitPlayer();
-    } else if (player.isAlive) {
-      this.props.actions.movePlayer(this.playerCurrentXPosition, gameBoard.height-60);
-    }
 
     //bullet
     if (bullet.isAlive && bullet.y > 0) {
       this.bulletCurrentYPosition = bullet.y - 4;
-      this.props.actions.bulletIsMoving(bullet.x, this.bulletCurrentYPosition);
+      this.props.actions.bulletIsMoving(this.bulletCurrentYPosition);
     } else if (bullet.isAlive && bullet.y <= 0) {
-      this.props.actions.bulletHasFinished();
-    }
-
-    if (gameFunctions.checkRectCollision(enemy, bullet)) {
-      this.props.actions.scored();
       this.props.actions.bulletHasFinished();
     }
 
@@ -146,17 +138,24 @@ class GameLoop extends Component {
     if(enemy.y <= 0){
       this.enemyChangeDirection('top');
     }
+
+    //collission detection
+    if (gameFunctions.checkRectCollision(enemy, bullet)) {
+      this.props.actions.scored();
+      this.props.actions.bulletHasFinished();
+    }
     if(!gameFunctions.checkRectCollision(player, enemy)){
       this.props.actions.moveEnemy(enemy.id, (enemy.x+enemy.velocity.x),
       (enemy.y+enemy.velocity.y));
+      this.props.actions.movePlayer(this.playerCurrentXPosition, gameBoard.height-60);
     } else {
-      return;
-      //console.log('hit',gameFunctions.checkRectCollision(this.props.enemy, this.props) );
+        this.props.actions.enemyHitPlayer();
     }
   }
 
   render() {
     const { player, enemy, bullet, gameBoard, handleClickEvent, explosion }  = {...this.props};
+    let bulletPosition = {transform: `translate(${bullet.x}px, ${bullet.y}px)`};
     return (
       <Stage width={gameBoard.width} height={gameBoard.height}>
         <World>
@@ -171,12 +170,17 @@ class GameLoop extends Component {
             onSwipedDown={() => this.onSwiped('DOWN')}
             onTap={()=>this.fireBullet()}
             >
-            {this.props.hasGameStarted &&
+            {player.isAlive &&
               <Player
                 player={player}
-                bullet={bullet}
-                explosion={explosion}
                 />}
+                {explosion.isAlive && <Explosion
+                      className="explosion"
+                      onPlayStateChanged={this.explosionStateChange}
+                      positionX={player.x}
+                      positionY={player.y}
+                    />}
+                {bullet.isAlive && <BulletImage style={bulletPosition}/>}
           </Swipeable>
         </World>
       </Stage>

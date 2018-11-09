@@ -6,9 +6,10 @@ export default function BulletImage(props) {
   } else {
     classList="floatingBulletImage";
   }
-  
+
   return (
-    <svg data-name="floatingBulletImage" id="floatingBulletImage" className={classList} style={props.style} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
+  <div className={classList} style={props.style} >
+    <svg data-name="floatingBulletImage" id="floatingBulletImage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
     <defs>
       <radialGradient id="floatingBulletImageGradient" cx="2.5" cy="2.5" r="2.5" gradientUnits="userSpaceOnUse">
         <stop offset="0.35" stopColor="#fff" stopOpacity="0.8"/>
@@ -25,5 +26,6 @@ export default function BulletImage(props) {
       </radialGradient>
     </defs>
     <circle className="BulletImage" cx="2.5" cy="2.5" r="2.5"/>
-  </svg>);
+  </svg>
+</div>);
 }

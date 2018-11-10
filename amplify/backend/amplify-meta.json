@@ -1,0 +1,27 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "evelopment-20181110083805-authRole",
+			"UnauthRoleArn": "arn:aws:iam::671974574830:role/evelopment-20181110083805-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::671974574830:role/evelopment-20181110083805-authRole",
+			"Region": "ap-southeast-2",
+			"DeploymentBucketName": "evelopment-20181110083805-deployment",
+			"UnauthRoleName": "evelopment-20181110083805-unauthRole",
+			"StackName": "evelopment-20181110083805",
+			"StackId": "arn:aws:cloudformation:ap-southeast-2:671974574830:stack/evelopment-20181110083805/ba65d380-e467-11e8-8182-061fe90e3f5e"
+		}
+	},
+	"auth": {
+		"cognito4d8276ba": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation"
+		}
+	},
+	"interactions": {
+		"chatbot": {
+			"service": "Lex",
+			"providerPlugin": "awscloudformation",
+			"build": true
+		}
+	}
+}

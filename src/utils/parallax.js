@@ -72,7 +72,7 @@ export function fadeMe(elements) {
 export function Xparallax(){
   if (document.getElementById('parallax') && document.body.clientWidth > 768) {
     let element = document.getElementById('parallax');
-    let speedFactor = 0.2;
+    let speedFactor = 0.4;
     let position = animateLeft ? scroll_positionX - speedFactor : scroll_positionX + speedFactor;
     scroll_positionX = position;
     let animationValue = `translate(${position}%, 0)`;
@@ -96,13 +96,15 @@ export function Xparallax(){
   }
 }
 function startAnimation(animationFunction){
+  document.body.classList.add('no-overflow');
     animationId = window.requestAnimationFrame(function() {
-      console.log('requestAnimationFrame running');
       animationFunction();
     });
 }
 function stopAnimation(){
+
    cancelAnimationFrame(animationId);
+   return document.body.classList.add('no-overflow');
 }
 export function parallax(scroll_positionX, last_known_scroll_positionY) {
   if (document.getElementById('parallax')) { //ensure the element exists

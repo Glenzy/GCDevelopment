@@ -42,6 +42,7 @@
     "react-game-kit": "1.0.6",
     "react-redux": "5.0.7",
     "react-router-dom": "4.3.1",
+    "react-sizes": "1.0.4",
     "react-swipeable": "4.3.0",
     "react-vis": "1.11.2",
     "redux": "4.0.0",

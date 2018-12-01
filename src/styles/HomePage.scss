@@ -13,13 +13,16 @@
     color: #ffffff;
 }
 
-.header-text{
+.header-text {
   margin: 0;
   text-align: center;
   h1 {
     font-family: "Space-Invaders";
     color:#fff;
     line-height: 1.4;
+    @media(max-width: 1024px){
+      font-size: 1.5em;
+    }
   }
   .btn-intro {
     width: 150px;

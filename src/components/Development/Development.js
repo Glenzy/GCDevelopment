@@ -3,19 +3,25 @@ import React, {Component} from 'react';
 import * as actions from '../../actions/DevExampleActions';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import posed, { PoseGroup, tween } from 'react-pose';
+import posed, { PoseGroup } from 'react-pose';
 import Examples from './Examples';
 import InteractiveGraph from './InteractiveGraph';
 const SkillWapper = posed.div({
   500:{
     height:500,
-    transition:tween,
+    transition:{
+      duration: 400,
+      ease: 'linear'
+    },
     delay:400,
     flip: true
   },
   800:{
     height:800,
-    transition:tween,
+    transition:{
+      duration: 400,
+      ease: 'linear'
+    },
     delay:200,
     flip: true
   }

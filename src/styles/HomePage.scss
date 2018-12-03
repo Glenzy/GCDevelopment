@@ -13,22 +13,46 @@
     color: #ffffff;
 }
 
-.header-text{
+.header-text {
   margin: 0;
   text-align: center;
   h1 {
     font-family: "Space-Invaders";
     color:#fff;
     line-height: 1.4;
+    @media(max-width: 1024px){
+      font-size: 1.8em;
+    }
+    @media(max-width: 576px){
+      font-size: 1.5em;
+    }
   }
-  .btn-intro {
-    width: 150px;
-  }
-  li {
+  .intro-links {
+    color: #fff;
     font-size: 30px;
-    color:#fff;
-    padding:10px 0;
-    font-weight: 100;
-    & span {color:#e35110;font-weight: bold;}
+    display: inline-block;
+    width: 100px;
+
+    .fa-code, .fa-address-book {
+      transition: all 0.2s ease-in-out;
+      color: #fff;
+      display: block;
+      text-align: center;
+      margin: 20px auto;
+      border: 5px #fff solid;
+      border-radius: 5px;
+      width: 60px;
+      height:50px;
+      padding:5px;
+      background: rgba(0,0,0, 0.8);
+    }
+    &:hover, &:focus {
+      .fa-code, .fa-address-book {
+        color:#e35110;
+        border: 5px #e35110 solid;
+      }
+    }
+    @include media-breakpoint-up(lg) {
+     }
   }
 }

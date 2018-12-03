@@ -94,6 +94,9 @@
         min-width: 100vw;
         min-height: 100vh;
       }
+      &.closed {
+        display: none;
+      }
       li {
         position: absolute;
         right: 0px;

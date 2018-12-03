@@ -44,6 +44,14 @@
           h4 {display: inline-flex; font-size: 30px;}
           p {text-align: left;}
         }
+        @media(max-width: 1024px){
+          background: none;
+          box-shadow: none;
+          height:auto !important;
+          .pin-top {
+            top:0;
+          }
+        }
       }
       .rv-radial-chart {
         overflow: visible;

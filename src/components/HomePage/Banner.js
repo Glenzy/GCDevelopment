@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCode, faAddressBook } from '@fortawesome/free-solid-svg-icons';
 class Banner extends Component {
   componentDidMount() {}
 
@@ -11,8 +13,12 @@ class Banner extends Component {
         <div className="row v-center">
           <div className="col-sm-8 text-center header-text mx-auto">
             <h1 className="">Front-end Developer</h1>
-            <Link to="/development" className="btn btn-intro">Dev Examples</Link>
-            <Link to="/hire-me" className="btn btn-intro">Hire Me</Link>
+            <Link to="/development" className="intro-links">
+              <FontAwesomeIcon icon={faCode} />
+            </Link>
+            <Link to="/hire-me" className="intro-links">
+              <FontAwesomeIcon icon={faAddressBook} />
+          </Link>
           </div>
         </div>
       </div>

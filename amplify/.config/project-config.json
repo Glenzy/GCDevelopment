@@ -1,0 +1,20 @@
+{
+    "projectName": "GCDevelopment",
+    "projectPath": "C:\\Development\\GCDevelopment",
+    "defaultEditor": "atom",
+    "frontendHandler": {
+        "javascript": "C:\\Users\\glenr\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-frontend-javascript"
+    },
+    "javascript": {
+        "framework": "react",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "dist",
+            "BuildCommand": "npm run build",
+            "StartCommand": "npm start"
+        }
+    },
+    "providers": {
+        "awscloudformation": "C:\\Users\\glenr\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-provider-awscloudformation"
+    }
+}

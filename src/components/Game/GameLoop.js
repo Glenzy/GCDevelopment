@@ -49,7 +49,6 @@ class GameLoop extends Component {
 
   fireBullet = () => {
     if(!this.props.bullet.isAlive){
-      console.log('fired');
       return this.props.actions.fireBullet(this.props.player.x, this.props.gameBoard.height-50);
     }
   }
@@ -186,7 +185,38 @@ class GameLoop extends Component {
       </Stage>
     );
   }
-
 }
-
+GameLoop.propTypes = {
+  handleClickEvent: PropTypes.func.isRequired,
+  Game: PropTypes.shape({
+    enemy: PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      x: PropTypes.number.isRequired,
+      y: PropTypes.number.isRequired,
+      velocity: PropTypes.shape({
+        x: PropTypes.number.isRequired,
+        y: PropTypes.number.isRequired,
+        lastXchange: PropTypes.instanceOf(Date).isRequired,
+        lastYchange: PropTypes.instanceOf(Date).isRequired,
+      }).isRequired,
+    }).isRequired,
+    player: PropTypes.shape({
+      score: PropTypes.number.isRequired,
+      x: PropTypes.number.isRequired,
+      y: PropTypes.number.isRequired,
+      velocity: PropTypes.objectOf(PropTypes.number).isRequired,
+      isAlive: PropTypes.bool.isRequired,
+    }).isRequired,
+    Bullet: PropTypes.shape({
+      isAlive:PropTypes.bool.isRequired,
+      x: PropTypes.number.isRequired,
+      y: PropTypes.number.isRequired,
+    }).isRequired,
+    Explosion:PropTypes.shape({
+      isAlive:PropTypes.bool.isRequired,
+      x: PropTypes.number.isRequired,
+      y: PropTypes.number.isRequired,
+    }).isRequired,
+}).isRequired,
+};
 export default GameLoop;

@@ -1,0 +1,181 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "Lex chatbot creation from Amplify CLI",
+    "Parameters": {
+    },
+    "Metadata": {
+        "AWS::CloudFormation::Interface": {
+            "ParameterGroups": [
+                {
+                    "Label": {
+                        "default": "Creating lex chatbot"
+                    },
+                    "Parameters": [
+                        "inputs"
+                    ]
+                }
+            ]
+        }
+    },
+    "Resources": {
+        "LambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+                "Handler": "index.handler",
+                "FunctionName": "gcdevelopment_cfnlambda_68fa8195",
+                "Role": { "Fn::GetAtt" : ["LambdaExecutionRole", "Arn"] },
+                "Runtime": "nodejs6.10",
+                "Timeout": "300"
+            }
+        },
+        
+        "LambdaExecutionRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "RoleName": "lexLambdaRole68fa8195",
+                "AssumeRolePolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Service": [
+                                    "lambda.amazonaws.com"
+                                ]
+                            },
+                            "Action": [
+                                "sts:AssumeRole"
+                            ]
+                        }
+                    ]
+                },
+                "Policies": [
+                    {
+                        "PolicyName": "cloudWatchPolicy68fa8195",
+                        "PolicyDocument": {
+                            "Version": "2012-10-17",
+                            "Statement": [
+                                {
+                                    "Effect": "Allow",
+                                    "Action": [
+                                        "logs:CreateLogGroup",
+                                        "logs:CreateLogStream",
+                                        "logs:PutLogEvents"
+                                    ],
+                                    "Resource": "arn:aws:logs:*:*:*"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "PolicyName": "lexPolicy68fa8195",
+                        "PolicyDocument": {
+                            "Version": "2012-10-17",
+                            "Statement": [
+                                {
+                                    "Effect": "Allow",
+                                    "Action": [
+                                        "lex:*"
+                                    ],
+                                    "Resource": "*"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "PolicyName": "lambdaPolicy68fa8195",
+                        "PolicyDocument": {
+                            "Version": "2012-10-17",
+                            "Statement": [
+                                {
+                                    "Effect": "Allow",
+                                    "Action": [
+                                        "lambda:*"
+                                    ],
+                                    "Resource": "*"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "LambdaFunctionOutputs68fa8195": {
+            "Type": "Custom::LambdaCallout",
+            "Properties": {
+                "ServiceToken": {
+                    "Fn::GetAtt": [
+                        "LambdaFunction",
+                        "Arn"
+                    ]
+                }
+            }
+        },
+        "CognitoUnauthPolicy": {
+            "Type": "AWS::IAM::Policy",
+            "Properties": {
+              "PolicyName": "lex_amplify_68fa8195",
+              "Roles": [ 
+                "evelopment-20181110083805-unauthRole"
+              ],
+              "PolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [ 
+                    {
+                        "Action": [
+                            "lex:PostContent",
+                            "lex:PostText"
+                        ],
+                        "Effect": "Allow",
+                        "Resource": [
+                            "arn:aws:lex:ap-southeast-2:671974574830:bot:BookTrip:*"
+                        ]
+                    }
+                ]
+              }
+            }
+        },
+        "CognitoAuthPolicy": {
+            "Type": "AWS::IAM::Policy",
+            "Properties": {
+                "PolicyName": "lex_amplify_68fa8195",
+              "Roles": [ 
+                "evelopment-20181110083805-authRole"
+              ],
+              "PolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
+                    {
+                        "Action": [
+                            "lex:PostContent",
+                            "lex:PostText"
+                        ],
+                        "Effect": "Allow",
+                        "Resource": [
+                            "arn:aws:lex:ap-southeast-2:671974574830:bot:BookTrip:*"
+                        ]
+                    }
+                ]
+              }
+            }
+        }
+    },
+    "Outputs": {
+        "Region": {
+            "Value": {
+                "Ref": "AWS::Region"
+            }
+        },
+        "BotName":  {
+            "Value": "BookTrip"
+        },
+        "FunctionArn": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "LambdaFunction",
+                    "Arn"
+                ]
+            }
+        }
+    }
+}

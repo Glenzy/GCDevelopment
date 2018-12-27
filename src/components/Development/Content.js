@@ -12,7 +12,7 @@ const Children = posed.div({
     opacity: 0,
    }
 });
-const SkillLogo = posed.img({
+export const SkillLogo = posed.img({
   enter:{
     opacity:1,
     delay:300,
@@ -23,7 +23,7 @@ const SkillLogo = posed.img({
     x:-50,
   }
 });
-const SkillTitle = posed.h4({
+export const SkillTitle = posed.h4({
   enter:{
     opacity:1,
     delay:300,

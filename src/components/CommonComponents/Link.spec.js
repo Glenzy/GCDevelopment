@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, shallowToJson } from 'enzyme';
+import { shallow } from 'enzyme';
 import LinkItem from './Link';
 import { Link } from 'react-router-dom';
 
@@ -36,7 +36,7 @@ describe('the links component', ()=>{
     givenLinkWithProps(defaultProps);
     //when
     //then
-    expect(wrapper.find(Link).props().to).toEqual('https://google.com.au');
+    expect(wrapper.find(Link).prop("to")).toEqual('https://google.com.au');
   });
 });
 

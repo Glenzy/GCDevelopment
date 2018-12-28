@@ -38,7 +38,3 @@ dist
 
 # Mac files
 .DS_Store
-
-
-.amplifyrc
-.editorconfig

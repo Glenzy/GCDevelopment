@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import posed, { PoseGroup } from 'react-pose';
+import { listen } from 'popmotion';
 //import PropTypes from 'prop-types';
 const Children = posed.div({
   enter: {
@@ -34,7 +35,7 @@ export const SkillTitle = posed.h4({
     x:50,
   }
 });
-const SkillContent = posed.p({
+export const SkillContent = posed.p({
   enter:{
     opacity:1,
     delay:400,
@@ -54,7 +55,7 @@ class Content extends PureComponent {
       <div className="developmentContent">
         <PoseGroup>
           <Children key={`${skills.id}`}>
-            <SkillLogo src={skills.imgSrc}className="skill-logo" key={`${skills.id}-a`} />
+            <SkillLogo src={skills.imgSrc} className="skill-logo" key={`${skills.id}-a`} />
             <SkillTitle key={`${skills.id}-b`}>{skills.label}</SkillTitle>
             <SkillContent key={`${skills.id}-c`}>{skills.info}</SkillContent>
           </Children>
@@ -63,5 +64,6 @@ class Content extends PureComponent {
     );
   }
 }
+
 
 export default Content;

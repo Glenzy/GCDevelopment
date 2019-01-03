@@ -48,7 +48,7 @@ const FadeInContent = posed.div({
     x:-100,
   }
 });
-class Development extends Component {
+export class Development extends Component {
 /*
   TO DO:
     Add swipeable for mobile navigation

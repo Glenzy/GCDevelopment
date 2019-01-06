@@ -24,4 +24,6 @@ describe('The Development component', () => {
     });
 });
 
-const givenContentWithProps = (DevExamples) => wrapper = shallow( <Development DevExamples = { DevExamples }/>);
+const givenContentWithProps = (DevExamples) => wrapper = shallow( 
+    <Development DevExamples = {DevExamples}/>
+);

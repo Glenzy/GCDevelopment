@@ -43,27 +43,7 @@ class Game extends Component {
   }
 }
 Game.propTypes = {
-  handleClickEvent: PropTypes.func.isRequired,
-  Game: PropTypes.shape({
-    enemy: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      x: PropTypes.number.isRequired,
-      y: PropTypes.number.isRequired,
-      velocity: PropTypes.shape({
-        x: PropTypes.number.isRequired,
-        y: PropTypes.number.isRequired,
-        lastXchange: PropTypes.instanceOf(Date).isRequired,
-        lastYchange: PropTypes.instanceOf(Date).isRequired,
-      }).isRequired,
-    }).isRequired,
-    player: PropTypes.shape({
-      score: PropTypes.number.isRequired,
-      x: PropTypes.number.isRequired,
-      y: PropTypes.number.isRequired,
-      velocity: PropTypes.objectOf(PropTypes.number).isRequired,
-      lives: PropTypes.number.isRequired,
-    }).isRequired,
-}).isRequired,
+  gamePropTypes: PropTypes.object.isRequired
 };
 function mapStateToProps(state) {
   return {Game: state.Game};

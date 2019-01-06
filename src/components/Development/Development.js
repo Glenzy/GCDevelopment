@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-//import PropTypes from 'prop-types';
+import { developmentPropTypes } from '../../types';
 import * as actions from '../../actions/DevExampleActions';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -113,8 +113,11 @@ showExamplesAction = () =>{
       </div>
     </div>);
   }
-
 }
+
+Development.propTypes = {
+  ...developmentPropTypes,
+};
 
 function mapStateToProps(state) {
   return {DevExamples: state.DevExamples};

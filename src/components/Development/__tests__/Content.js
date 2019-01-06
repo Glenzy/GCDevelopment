@@ -36,7 +36,6 @@ describe('The Development Content component', () => {
     });
 });
 
-const givenContentWithProps = (skills = defaultSkills) => wrapper = mount( <
-    Content skills = { skills }
-    />
+const givenContentWithProps = (skills = defaultSkills) => wrapper = mount( 
+    <Content skills = {skills}/>
 );

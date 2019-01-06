@@ -27,5 +27,5 @@ describe('The Radial Graph', () => {
 });
 
 const givenContentWithProps = (skills = defaultProps) => wrapper = mount( 
-    <RadialGraph skills = { skills } />
+    <RadialGraph skills = {skills} />
 );

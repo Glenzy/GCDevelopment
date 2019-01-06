@@ -80,7 +80,7 @@ export function saveScore(score, playerName) {
         topScores
       });
     }).catch((error) => {
-      console.log(error);
+      return new Error('Couldn\'t write scores to database: ' + toString(error));
     });
   };
 }

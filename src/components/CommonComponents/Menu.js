@@ -1,6 +1,7 @@
 import React, {PureComponent} from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
+import  { menuPropTypes } from '../../types';
 import * as actions from '../../actions/MenuActions';
 import {NavLink} from 'react-router-dom';
 import posed from 'react-pose';
@@ -69,6 +70,10 @@ class Menu extends PureComponent {
   }
 
 }
+
+Menu.propTypes = {
+  ...menuPropTypes
+};
 
 function mapStateToProps(state) {
   return {Menu: state.Menu};

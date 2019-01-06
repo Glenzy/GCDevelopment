@@ -48,7 +48,7 @@ const FadeInContent = posed.div({
     x:-100,
   }
 });
-class Development extends Component {
+export class Development extends Component {
 /*
   TO DO:
     Add swipeable for mobile navigation
@@ -94,7 +94,7 @@ showExamplesAction = () =>{
         </div>
         <SkillWapper className="skillwrapper" pose={showExamples ? '800' :'500'}>
           <PoseGroup>
-             <FadeInContent pose={showExamples ? 'hide' :'show'} key="interactiveGraph" className={showExamples ? 'pin-top' : 'shown pin-top'}>
+             <FadeInContent pose={showExamples ? 'hide' :'show'} key="interactiveGraph" className={showExamples ? 'pin-top' : 'shown pin-top graph'}>
               <InteractiveGraph
                 skill={skill}
                 skills={skills}
@@ -105,7 +105,7 @@ showExamplesAction = () =>{
                 className={showExamples ? 'shown' : ''}
                 key="interactiveGraph" />
             </FadeInContent>
-            <FadeInExamples  pose={showExamples ? 'show' :'hide'} key="examples" className={showExamples ? 'shown pin-top' : 'pin-top'}>
+            <FadeInExamples  pose={showExamples ? 'show' :'hide'} key="examples" className={showExamples ? 'shown pin-top examples' : 'pin-top'}>
                <Examples showExamplesAction={this.showExamplesAction} showExamples={showExamples}  key="examples" />
             </FadeInExamples>
           </PoseGroup>

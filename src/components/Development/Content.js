@@ -12,7 +12,7 @@ const Children = posed.div({
     opacity: 0,
    }
 });
-const SkillLogo = posed.img({
+export const SkillLogo = posed.img({
   enter:{
     opacity:1,
     delay:300,
@@ -23,7 +23,7 @@ const SkillLogo = posed.img({
     x:-50,
   }
 });
-const SkillTitle = posed.h4({
+export const SkillTitle = posed.h4({
   enter:{
     opacity:1,
     delay:300,
@@ -34,7 +34,7 @@ const SkillTitle = posed.h4({
     x:50,
   }
 });
-const SkillContent = posed.p({
+export const SkillContent = posed.p({
   enter:{
     opacity:1,
     delay:400,
@@ -54,7 +54,7 @@ class Content extends PureComponent {
       <div className="developmentContent">
         <PoseGroup>
           <Children key={`${skills.id}`}>
-            <SkillLogo src={skills.imgSrc}className="skill-logo" key={`${skills.id}-a`} />
+            <SkillLogo src={skills.imgSrc} className="skill-logo" key={`${skills.id}-a`} />
             <SkillTitle key={`${skills.id}-b`}>{skills.label}</SkillTitle>
             <SkillContent key={`${skills.id}-c`}>{skills.info}</SkillContent>
           </Children>
@@ -63,5 +63,6 @@ class Content extends PureComponent {
     );
   }
 }
+
 
 export default Content;

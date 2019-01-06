@@ -4,7 +4,7 @@ import * as actions from '../../actions/DevExampleActions';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-class RadiaGraph extends PureComponent {
+export class RadialGraph extends PureComponent {
 
   mapData = () => {
    const { skills } = this.props;
@@ -64,4 +64,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RadiaGraph);
+export default connect(mapStateToProps, mapDispatchToProps)(RadialGraph);

@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
 import posed, { PoseGroup } from 'react-pose';
-import { listen } from 'popmotion';
 //import PropTypes from 'prop-types';
 const Children = posed.div({
   enter: {

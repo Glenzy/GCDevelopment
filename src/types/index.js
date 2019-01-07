@@ -1,7 +1,7 @@
 // Centralized propType definitions
 import PropTypes from 'prop-types';
 
-const { shape, number, instanceOf, bool, string, objectOf, arrayOf, func } = PropTypes;
+const { shape, number, instanceOf, bool, string, objectOf, arrayOf, func, object } = PropTypes;
 
 export const gamePropTypes = {
   handleClickEvent: PropTypes.func.isRequired,
@@ -48,7 +48,33 @@ export const developmentSkillsPropTypes = {
 export const developmentPropTypes = {
   DevExamples:shape({
     showExamples: bool.isRequired,
-    skills:arrayOf(PropTypes.object).isRequired,
-    actions:func.isRequired,
+    skills:arrayOf(object).isRequired,
+    actions:shape(func.isRequired),
   }).isRequired,
+};
+
+export const interactiveGraphPropTypes = {
+  skills: arrayOf(PropTypes.object).isRequired,
+  showExamplesAction: func.isRequired,
+  prevSkill: func.isRequired,
+  skill: arrayOf({
+    id: number.isRequired,
+    label:string.isRequired,
+    angle: number.isRequired,
+    radius: number.isRequired,
+    imgSrc: string.isRequired,
+    color: string.isRequired,
+    stopOpacityA: string.isRequired,
+    stopOpacityB: string.isRequired,
+    active: bool.isRequired,
+    info: string.isRequired,
+  }).isRequired,
+};
+
+export const examplesPropTypes = {
+  showExamplesAction: func.isRequired
+};
+export const radialGraphPropTypes = {
+  skills: arrayOf(PropTypes.object).isRequired,
+  actions:shape(func.isRequired),
 };

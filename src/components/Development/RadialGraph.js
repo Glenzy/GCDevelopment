@@ -3,6 +3,7 @@ import {CircularGridLines, RadialChart, GradientDefs} from 'react-vis';
 import * as actions from '../../actions/DevExampleActions';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import { radialGraphPropTypes } from '../../types';
 
 export class RadialGraph extends PureComponent {
 
@@ -50,8 +51,12 @@ export class RadialGraph extends PureComponent {
       </RadialChart>
     );
   }
-
 }
+
+RadialGraph.propTypes = {
+  ...radialGraphPropTypes
+};
+
 function mapStateToProps(state) {
   return {DevExamples: state.DevExamples};
 }

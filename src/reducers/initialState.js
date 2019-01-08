@@ -47,8 +47,8 @@ export default {
     },
     bullet: {
       isAlive:false,
-      x:0,
-      y:0,
+      positionX:0,
+      positionY:0,
       width:10,
       height:10,
     },

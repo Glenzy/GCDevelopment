@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import * as actions from '../../actions/GameActions';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+import { gamePropTypes } from '../../types/GameTypes';
 import GameLoop from './GameLoop';
 import {Loop} from 'react-game-kit';
 class Game extends Component {
@@ -34,7 +34,7 @@ class Game extends Component {
       onKeyPress={this.handleKeyPress} ref={this.gameBoardRef}>
       <Loop>
         <GameLoop
-          {...Game}
+          Game={Game}
           handleClickEvent={handleClickEvent}
           actions={actions}
           />
@@ -43,7 +43,7 @@ class Game extends Component {
   }
 }
 Game.propTypes = {
-  gamePropTypes: PropTypes.object.isRequired
+  ...gamePropTypes
 };
 function mapStateToProps(state) {
   return {Game: state.Game};

@@ -1,5 +1,5 @@
 import React from 'react';
-import { examplesPropTypes } from '../../types';
+import { examplesPropTypes } from '../../types/DevelopmentTypes';
 import GameContainer from '../Game/GameContainer';
 
 const Examples = ({ showExamplesAction }) => {

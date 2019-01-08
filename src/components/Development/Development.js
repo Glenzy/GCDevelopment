@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { developmentPropTypes } from '../../types';
+import { developmentPropTypes } from '../../types/DevelopmentTypes';
 import * as actions from '../../actions/DevExampleActions';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';

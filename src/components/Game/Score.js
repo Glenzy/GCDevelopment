@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { scorePropTypes } from '../../types/GameTypes';
 const Score = (props) => {
  return (
    <div className="scoreWrapper">
@@ -9,6 +9,6 @@ const Score = (props) => {
  );
 };
 Score.propTypes = {
-  score: PropTypes.number.isRequired,
+  ...scorePropTypes
 };
 export default Score;

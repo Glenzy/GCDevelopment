@@ -3,7 +3,7 @@ import {CircularGridLines, RadialChart, GradientDefs} from 'react-vis';
 import * as actions from '../../actions/DevExampleActions';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import { radialGraphPropTypes } from '../../types';
+import { radialGraphPropTypes } from '../../types/DevelopmentTypes';
 
 export class RadialGraph extends PureComponent {
 
@@ -18,7 +18,7 @@ export class RadialGraph extends PureComponent {
  }
 
   render() {
-    const { skills } = this.props;
+    const { skills, actions } = this.props;
     return (
       <RadialChart
         animation
@@ -29,8 +29,8 @@ export class RadialGraph extends PureComponent {
         colorRange={[0, 10]}
         getColor={data => `url(#${data.gradientLabel})`}
         data={this.mapData()}
-        onValueMouseOver={row => this.props.actions.interactedWithGraph(row.id)}
-        onClick={row => this.props.actions.interactedWithGraph(row.id)}
+        onValueMouseOver={row => actions.interactedWithGraph(row.id)}
+        onClick={row => actions.interactedWithGraph(row.id)}
         width={300}
         height={300}
         labelsRadiusMultiplier={1.3}

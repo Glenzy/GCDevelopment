@@ -1,6 +1,6 @@
 import React from 'react';
-import { RadialGraph } from './RadialGraph';
-import { interactiveGraphPropTypes } from '../../types';
+import RadialGraph from './RadialGraph';
+import { interactiveGraphPropTypes } from '../../types/DevelopmentTypes';
 import Button from '../CommonComponents/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Swipeable from 'react-swipeable';

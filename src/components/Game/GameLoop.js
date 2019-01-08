@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { gameLoopPropTypes } from  '../../types/GameTypes';
 import {Stage, World} from 'react-game-kit';
 import Swipeable from 'react-swipeable';
 import * as gameFunctions from '../../utils/gameFunctions';
@@ -10,7 +10,7 @@ import Explosion from './Explosion';
 import Hud from './Hud';
 class GameLoop extends Component {
   static contextTypes = {
-    loop: PropTypes.object
+    
   };
   constructor(props, context) {
     super(props, context);
@@ -105,7 +105,7 @@ class GameLoop extends Component {
   update(){
      const { player, enemy, bullet, gameBoard }  = {...this.props};
     //Player Movement
-    if (player.velocity.x === -1 && player.x > 0) {
+    if (player.velocity.x === 0 && player.x > 0) {
       //goes left
       this.playerCurrentXPosition = player.x - 2;
     } else if (player.velocity.x === 1 && player.x < gameBoard.width-60) {
@@ -187,36 +187,6 @@ class GameLoop extends Component {
   }
 }
 GameLoop.propTypes = {
-  handleClickEvent: PropTypes.func.isRequired,
-  Game: PropTypes.shape({
-    enemy: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      x: PropTypes.number.isRequired,
-      y: PropTypes.number.isRequired,
-      velocity: PropTypes.shape({
-        x: PropTypes.number.isRequired,
-        y: PropTypes.number.isRequired,
-        lastXchange: PropTypes.instanceOf(Date).isRequired,
-        lastYchange: PropTypes.instanceOf(Date).isRequired,
-      }).isRequired,
-    }).isRequired,
-    player: PropTypes.shape({
-      score: PropTypes.number.isRequired,
-      x: PropTypes.number.isRequired,
-      y: PropTypes.number.isRequired,
-      velocity: PropTypes.objectOf(PropTypes.number).isRequired,
-      isAlive: PropTypes.bool.isRequired,
-    }).isRequired,
-    Bullet: PropTypes.shape({
-      isAlive:PropTypes.bool.isRequired,
-      x: PropTypes.number.isRequired,
-      y: PropTypes.number.isRequired,
-    }).isRequired,
-    Explosion:PropTypes.shape({
-      isAlive:PropTypes.bool.isRequired,
-      x: PropTypes.number.isRequired,
-      y: PropTypes.number.isRequired,
-    }).isRequired,
-}).isRequired,
+  ...gameLoopPropTypes
 };
 export default GameLoop;

@@ -106,7 +106,7 @@ showExamplesAction = () =>{
                 key="interactiveGraph" />
             </FadeInContent>
             <FadeInExamples  pose={showExamples ? 'show' :'hide'} key="examples" className={showExamples ? 'shown pin-top examples' : 'pin-top'}>
-               <Examples showExamplesAction={this.showExamplesAction} showExamples={showExamples}  key="examples" />
+               {showExamples && <Examples showExamplesAction={this.showExamplesAction} showExamples={showExamples}  key="examples" />}
             </FadeInExamples>
           </PoseGroup>
         </SkillWapper>

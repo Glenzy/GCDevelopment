@@ -34,7 +34,7 @@ class Game extends Component {
       onKeyPress={this.handleKeyPress} ref={this.gameBoardRef}>
       <Loop>
         <GameLoop
-          Game={Game}
+          {...Game}
           handleClickEvent={handleClickEvent}
           actions={actions}
           />

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { gameLoopPropTypes } from  '../../types/GameTypes';
+import PropTypes from 'prop-types';
 import {Stage, World} from 'react-game-kit';
 import Swipeable from 'react-swipeable';
 import * as gameFunctions from '../../utils/gameFunctions';
@@ -10,7 +11,7 @@ import Explosion from './Explosion';
 import Hud from './Hud';
 class GameLoop extends Component {
   static contextTypes = {
-    
+    loop: PropTypes.object
   };
   constructor(props, context) {
     super(props, context);

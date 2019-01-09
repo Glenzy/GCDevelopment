@@ -63,12 +63,12 @@ export const gamePropTypes = {
         velocity: objectOf(number).isRequired,
         isAlive: bool.isRequired,
       }).isRequired,
-      Bullet: shape({
+      bullet: shape({
         isAlive:bool.isRequired,
-        x: number.isRequired,
-        y: number.isRequired,
+        positionX: number.isRequired,
+        positionY: number.isRequired,
       }).isRequired,
-      Explosion:shape({
+      explosion:shape({
         isAlive:bool.isRequired,
         x: number.isRequired,
         y: number.isRequired,

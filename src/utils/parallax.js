@@ -104,7 +104,7 @@ function startAnimation(animationFunction){
 function stopAnimation(){
 
    cancelAnimationFrame(animationId);
-   return document.body.classList.add('no-overflow');
+   return document.body.classList.remove('no-overflow');
 }
 export function parallax(scroll_positionX, last_known_scroll_positionY) {
   if (document.getElementById('parallax')) { //ensure the element exists

@@ -1,5 +1,5 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
+import { playerCharacterPropTypes } from '../../types/GameTypes';
 
 const Player = (props) => {
   return (
@@ -48,7 +48,7 @@ const Player = (props) => {
 };
 
 Player.propTypes = {
-//  : PropTypes.
+  ...playerCharacterPropTypes
 };
 
 export default Player;

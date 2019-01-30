@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-//import PropTypes from 'prop-types';
+import { developmentPropTypes } from '../../types/DevelopmentTypes';
 import * as actions from '../../actions/DevExampleActions';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -106,15 +106,18 @@ showExamplesAction = () =>{
                 key="interactiveGraph" />
             </FadeInContent>
             <FadeInExamples  pose={showExamples ? 'show' :'hide'} key="examples" className={showExamples ? 'shown pin-top examples' : 'pin-top'}>
-               <Examples showExamplesAction={this.showExamplesAction} showExamples={showExamples}  key="examples" />
+               {showExamples && <Examples showExamplesAction={this.showExamplesAction} showExamples={showExamples}  key="examples" />}
             </FadeInExamples>
           </PoseGroup>
         </SkillWapper>
       </div>
     </div>);
   }
-
 }
+
+Development.propTypes = {
+  ...developmentPropTypes,
+};
 
 function mapStateToProps(state) {
   return {DevExamples: state.DevExamples};

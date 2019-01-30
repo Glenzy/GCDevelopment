@@ -1,4 +1,5 @@
 import React from 'react';
+import { bulletImagePropTypes } from '../../types/GameTypes';
 export default function BulletImage(props) {
   let classList;
   if(props.cssClassName){
@@ -29,3 +30,6 @@ export default function BulletImage(props) {
   </svg>
 </div>);
 }
+BulletImage.propTypes = {
+  ...bulletImagePropTypes,
+};

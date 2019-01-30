@@ -1,4 +1,5 @@
 import React from 'react';
+import { examplesPropTypes } from '../../types/DevelopmentTypes';
 import GameContainer from '../Game/GameContainer';
 
 const Examples = ({ showExamplesAction }) => {
@@ -13,5 +14,7 @@ const Examples = ({ showExamplesAction }) => {
         </div>
     );
   };
-
+Examples.propTypes = {
+  ...examplesPropTypes
+};
 export default Examples;

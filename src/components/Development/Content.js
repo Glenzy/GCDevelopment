@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import posed, { PoseGroup } from 'react-pose';
-//import PropTypes from 'prop-types';
+import { developmentContentPropTypes } from '../../types/DevelopmentTypes';
 const Children = posed.div({
   enter: {
     opacity: 1,
@@ -64,5 +64,7 @@ class Content extends PureComponent {
   }
 }
 
-
+Content.propTypes = {
+  ...developmentContentPropTypes,
+};
 export default Content;

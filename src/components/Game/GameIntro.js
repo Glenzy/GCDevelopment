@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { gameIntroPropTypes } from '../../types/GameTypes';
 import Button from '../CommonComponents/Button';
 import Star from '../../images/star';
 
@@ -17,6 +17,6 @@ const GameIntro = (props) => {
   );
 };
 GameIntro.propTypes = {
-  handleClickEvent :  PropTypes.func.isRequired,
+  ...gameIntroPropTypes 
 };
 export default GameIntro;

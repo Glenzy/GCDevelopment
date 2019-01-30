@@ -9,11 +9,11 @@ import {
 import GameIntro from './GameIntro';
 import Game from './Game';
 import GameOver from './GameOver';
+import { gameContainerPropTypes } from '../../types/GameTypes';
 class GameContainer extends Component {
   constructor(props, context) {
     super(props, context);
     this.handleClickEvent = this.handleClickEvent.bind(this);
-
   }
 
   handleClickEvent() {
@@ -44,6 +44,9 @@ class GameContainer extends Component {
     );
   }
 }
+GameContainer.propTypes = {
+  ...gameContainerPropTypes
+};
 function mapStateToProps(state) {
   return {
     Game: state.Game,

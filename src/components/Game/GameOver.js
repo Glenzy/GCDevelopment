@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import { gameOverPropTypes} from '../../types/GameTypes';
 import Button from '../CommonComponents/Button';
 import Star from '../../images/star';
 import Score from './Score';
@@ -49,10 +49,6 @@ onChange = (event) => {
 
 }
 GameOver.propTypes = {
-  handleClickEvent :  PropTypes.func.isRequired,
-  topScores: PropTypes.shape({
-    showScores: PropTypes.bool.isRequired,
-    scores: PropTypes.array.isRequired,
-  })
+  ...gameOverPropTypes
 };
 export default GameOver;

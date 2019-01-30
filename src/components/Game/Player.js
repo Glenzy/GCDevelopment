@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { playerPropTypes } from '../../types/GameTypes';
 import PlayerCharacter from './PlayerCharacter';
 class Player extends React.Component {
   render() {
@@ -13,12 +13,6 @@ class Player extends React.Component {
   }
 }
 Player.propTypes = {
-  player: PropTypes.shape({
-    score: PropTypes.number.isRequired,
-    x: PropTypes.number.isRequired,
-    y: PropTypes.number.isRequired,
-    velocity: PropTypes.objectOf(PropTypes.number).isRequired,
-    lives: PropTypes.number.isRequired,
-  }).isRequired,
+  ...playerPropTypes 
 };
 export default Player;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { topScoresPropTypes } from '../../types/GameTypes';
 
 class TopScores extends Component {
 
@@ -10,7 +10,6 @@ class TopScores extends Component {
         <h4>Top scores:</h4>
         <ol type="1">
           {this.props.scores.map((score) => {
-            console.log('score', score);
             key = key+1;
           return <li key={key}>{key}. {score.name} : {score.score}</li>;
           })}
@@ -20,6 +19,6 @@ class TopScores extends Component {
   }
 }
 TopScores.propTypes = {
-    scores: PropTypes.arrayOf(PropTypes.object).isRequired,
+    ...topScoresPropTypes
   };
 export default TopScores;

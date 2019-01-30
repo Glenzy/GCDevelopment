@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { enemyCharacterPropTypes } from '../../types/GameTypes';
 
 const EnemyCharacter = (props) => {
 
@@ -50,7 +50,7 @@ const EnemyCharacter = (props) => {
 };
 
 EnemyCharacter.propTypes = {
-  id: PropTypes.number.isRequired,
+  ...enemyCharacterPropTypes
 };
 
 export default EnemyCharacter;
